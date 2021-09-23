@@ -1,0 +1,119 @@
+.hero {
+  width: 100%;
+}
+
+.swiper-container {
+  margin: 0 auto;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  padding-top: 240px;
+  padding-bottom: 122px;
+  padding-left: 10px;
+  display: block;
+}
+
+.hero-content__title {
+  width: 60%;
+  margin: 0;
+  margin-bottom: 22px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 82px;
+  color: var(--white-text);
+}
+
+.hero-content__descripton {
+  display: block;
+  width: 35%;
+  margin: 0;
+  margin-bottom: 92px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--white-text);
+}
+
+.hero-content__btn {
+  position: relative;
+  padding: 20px 35px;
+  background-color: var(--fialca-color);
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  color: var(--white-text);
+  transition: background 0.3s ease-out, outline 0.3s ease-in;
+}
+
+.hero-content__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  border: 3px solid transparent;
+  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.hero-content__btn:hover::before,
+.hero-content__btn:active::before {
+  border: 3px solid #D1A9F0;
+  transition: border 0.3s ease-in-out;
+}
+
+.hero-content__btn:active {
+  background-color: var(--focus-color);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.hero-content__btn:focus {
+  outline: transparent;
+}
+
+.hero-content__btn:not(:active):focus:before {
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid #C283F3;
+  transition: border 0.3s ease-in-out;
+}
+
+.swiper-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  background-color: #222;
+  background-size: cover;
+}
+
+.swiper-slide {
+  opacity: 0 !important;
+}
+
+.swiper-slide-active {
+  opacity: 1 !important;
+  transition: opacity ease-in-out 0.3s;
+}
+
+.hero-slide__one {
+  background: url("../img/slide1.jpg") no-repeat;
+  background-size: cover;
+}
+
+.hero-slide__two {
+  background: url("../img/slide2.jpg") no-repeat;
+  background-size: cover;
+}
+
+.hero-slide__tree {
+  background: url("../img/slide3.jpg") no-repeat;
+  background-size: cover;
+}

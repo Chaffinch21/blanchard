@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blanchard</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script/swiper.min.js"></script>
+  <script src="script/script.js" defer></script>
+  <link rel="icon" href="img/favicon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/swiper.min.css">
+  <link rel="stylesheet" href="style/fonts.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <link rel="stylesheet" href="style/hero.css">
+</head>
+<body>
+  
+  <svg style="display: none;">
+    <symbol id = "login" width="13" height="13" viewbox="0 0 13 13">
+      <path d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" fill="white"/>
+    </symbol>
+  </svg>
+
+  <header class="header">  
+    <div class="header-menu">
+      <div class="container header-menu__container">
+        <button type="button" class="btn header-burger header-burger-js burger" aria-label="Открыть меню">
+          <span class="header-burger-line"></span>
+          <span class="header-burger-line"></span>
+          <span class="header-burger-line"></span>
+        </button>
+
+        <a href="#" class="header-logo" aria-label="Сайт Blanchard. Художественная галерея">
+          <picture class="header-logo__picture">
+            <source class="header-logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
+            <source class="header-logo__img" media="(max-width: 1024px)" srcset="img/logoheader1024.svg">
+            <source class="header-logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
+            <img class="header-logo__img" src="img/logoheader.svg" alt="логотип Blanchard">
+          </picture>
+        </a>
+
+        <nav class="header-nav nav">
+          <ul class="nav-list list-reset">
+            <li class="nav-item"><a href="" class="nav-item__link">О нас</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">Галерея</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">Каталог</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">События</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">Издания</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">Проекты</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-login">
+          <button class="btn header-login__btn">
+            <svg class="header-login__img">
+              <use xlink:href="#login" />
+            </svg>Войти
+          </button>
+        </div>
+
+        <div class="header-mediaserch"></div>
+      </div>
+    </div>
+
+    <div class="header-submenu">
+      <div class="container header-submenu__container">
+        <nav class="submenu-nav">
+          <ul class="list-reset submenu-list">
+            <li class="submenu-item"><a href="#" class="submenu-item__link">Реализм</a></li>
+            <li class="submenu-item"><a href="#" class="submenu-item__link">Импрессионизм</a></li>
+            <li class="submenu-item"><a href="#" class="submenu-item__link">Постимпрессионизм</a></li>
+            <li class="submenu-item"><a href="#" class="submenu-item__link">Авангард</a></li>
+            <li class="submenu-item"><a href="#" class="submenu-item__link">Футуризм</a></li>
+          </ul>
+        </nav>
+        
+        <form class="header-search">
+          <button type="button" aria-label="найти" class="btn header-search__submit"></button>
+          <input type="search" name="header-search" placeholder="Поиск по сайту" class="input-reset header-search__field">
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <div class=" swiper-container swiper-container-js">
+        <div class="container hero-content">
+          <h1 class="hero-content__title">Прикоснитесь к&nbsp;прекрасному</h1>
+          <p class="hero-content__descripton">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
+          <button class="btn hero-content__btn" type="button">Подписаться на&nbsp;рассылку</button>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide hero__slide hero-slide__one">        
+          </div>
+
+          <div class="swiper-slide hero__slide hero-slide__two">
+          </div>
+
+          <div class="swiper-slide hero__slide hero-slide__tree">
+           
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

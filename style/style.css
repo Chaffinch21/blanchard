@@ -1,0 +1,95 @@
+:root {
+  --dark-background: #000000;
+  --text-color: #333333;
+  --white-text: #ffffff;
+  --body-background : #FFFFFF;
+  --focus-color: #7943A4;
+  --hover-color: #C283F3;
+  --fialca-color: #9D5CD0;
+}
+
+html {
+  box-sizing: border-box; 
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; 
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  background-color: var(--body-background); 
+  font-family: 'Open Sans', 'Arial', sans-serif; 
+  font-size: 16px; 
+  color: var(--text-color); 
+}
+
+body.modal-active { 
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none; 
+  color: inherit; 
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%; 
+}
+
+svg path {
+  fill:inherit;
+  stroke:inherit;
+  stroke-width:inherit;
+}
+
+.visually-hidden { 
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container {
+  max-width: 1620px;
+  height: 100%;
+  margin: 0px auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.input-reset {
+  border: none;
+  background-color: transparent;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
