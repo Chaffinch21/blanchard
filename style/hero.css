@@ -88,8 +88,11 @@
 
 .swiper-wrapper {
   position: absolute;
+  width: 100%;
   top: 0;
   left: 0px;
+  right: 0;
+  bottom: 0;
   background-color: #222;
   background-size: cover;
 }
@@ -103,17 +106,43 @@
   transition: opacity ease-in-out 0.3s;
 }
 
-.hero-slide__one {
+
+
+@keyframes scaleImg {
+  0% {
+      background: url("../img/slide1.jpg") no-repeat;
+      background-size: 110%;
+      background-position: 50% 50%}
+
+  16% {background-size: 150%;
+      background-position: 30% 50%;}
+
+  32% {
+    background: url("../img/slide2.jpg") no-repeat;
+    background-size: 110%;
+    background-position: 50% 50%;
+  }
+  48% {background-size: 120%;
+    background-position: 20% 70%;}
+
+  64% {
+    background: url("../img/slide3.jpg") no-repeat;
+    background-size: 110%;
+    background-position: 50% 50%;
+  }
+
+  80% {background-size: 140%;
+    background-position: 70% 10%;}
+
+  100% {
+    background: url("../img/slide1.jpg") no-repeat;
+      background-size: 110%;
+      background-position: 50% 50%
+  }
+}
+
+.hero {
+  height: 800px;
   background: url("../img/slide1.jpg") no-repeat;
-  background-size: cover;
-}
-
-.hero-slide__two {
-  background: url("../img/slide2.jpg") no-repeat;
-  background-size: cover;
-}
-
-.hero-slide__tree {
-  background: url("../img/slide3.jpg") no-repeat;
-  background-size: cover;
+   animation: 20s scaleImg  ease infinite; 
 }

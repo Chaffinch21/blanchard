@@ -7,9 +7,14 @@
   <title>Blanchard</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script/swiper.min.js"></script>
+  <script src="script/choices.min.js"></script>
+  <script src="script/simplebar.js"></script>
   <script src="script/script.js" defer></script>
+
   <link rel="icon" href="img/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="style/normalize.css">
+  <link rel="stylesheet" href="style/choices.min.css">
+  <link rel="stylesheet" href="style/simplebar.css">
   <link rel="stylesheet" href="style/swiper.min.css">
   <link rel="stylesheet" href="style/fonts.css">
   <link rel="stylesheet" href="style/style.css">
@@ -70,7 +75,18 @@
       <div class="container header-submenu__container">
         <nav class="submenu-nav">
           <ul class="list-reset submenu-list">
-            <li class="submenu-item"><a href="#" class="submenu-item__link">Реализм</a></li>
+            <li class="submenu-item">
+              <select name="select" class="selectCustom">
+                <option value="Реализм" disabled selected>Реализм</option>
+                <option value="Тинторетто" class="selectCustom--tintoretto">Тинторетто</option>
+                <option value="Фридрих" class="selectCustom--fridrih">Фридрих</option>
+                <option value="Леонардо" class="selectCustom--leonardo">Леонардо</option>
+                <option value="Вероккьо" class="selectCustom--verokkyo">Вероккьо</option>
+                <option value="Реализм" disabled selected>Реализм</option>
+                <option value="Тинторетто" class="selectCustom--tintoretto">Тинторетто</option>
+                <option value="Фридрих" class="selectCustom--fridrih">Фридрих</option>
+              </select>
+            </li>
             <li class="submenu-item"><a href="#" class="submenu-item__link">Импрессионизм</a></li>
             <li class="submenu-item"><a href="#" class="submenu-item__link">Постимпрессионизм</a></li>
             <li class="submenu-item"><a href="#" class="submenu-item__link">Авангард</a></li>
@@ -88,14 +104,20 @@
 
   <main class="main">
     <section class="hero">
-      <div class=" swiper-container swiper-container-js">
+      <div class="container hero-content">
+        <h1 class="hero-content__title">Прикоснитесь к&nbsp;прекрасному</h1>
+        <p class="hero-content__descripton">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
+        <button class="btn hero-content__btn" type="button">Подписаться на&nbsp;рассылку</button>
+      </div>
+      <!-- <div class=" swiper-container swiper-container-js">
         <div class="container hero-content">
           <h1 class="hero-content__title">Прикоснитесь к&nbsp;прекрасному</h1>
           <p class="hero-content__descripton">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
           <button class="btn hero-content__btn" type="button">Подписаться на&nbsp;рассылку</button>
         </div>
         <div class="swiper-wrapper">
-          <div class="swiper-slide hero__slide hero-slide__one">        
+          <div class="swiper-slide hero__slide hero-slide__one">   
+             <img src="img/slide1.jpg" alt="">      
           </div>
 
           <div class="swiper-slide hero__slide hero-slide__two">
@@ -105,8 +127,10 @@
            
           </div>
         </div>
-      </div>
+      </div> -->
     </section>
+
+  
   </main>
 
 </body>
