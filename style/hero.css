@@ -143,5 +143,5 @@
 .hero {
   height: 800px;
   background: url("../img/slide1.jpg") no-repeat;
-   /* animation: 20s scaleImg  ease infinite;  */
+  animation: 20s scaleImg  ease infinite;  
 }
