@@ -19,7 +19,6 @@
   width: 60%;
   margin: 0;
   margin-bottom: 22px;
-  font-family: 'Open Sans';
   font-weight: 700;
   font-size: 72px;
   line-height: 82px;
@@ -144,5 +143,5 @@
 .hero {
   height: 800px;
   background: url("../img/slide1.jpg") no-repeat;
-   animation: 20s scaleImg  ease infinite; 
+   /* animation: 20s scaleImg  ease infinite;  */
 }

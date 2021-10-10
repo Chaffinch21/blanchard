@@ -8,7 +8,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script/swiper.min.js"></script>
   <script src="script/choices.min.js"></script>
-  <script src="script/simplebar.js"></script>
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
   <script src="script/script.js" defer></script>
 
   <link rel="icon" href="img/favicon.svg" type="image/x-icon">
@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="style/header.css">
   <link rel="stylesheet" href="style/hero.css">
 </head>
-<body>
+<body class="body">
   
   <svg style="display: none;">
     <symbol id = "login" width="13" height="13" viewbox="0 0 13 13">
@@ -49,7 +49,7 @@
 
         <nav class="header-nav nav">
           <ul class="nav-list list-reset">
-            <li class="nav-item"><a href="" class="nav-item__link">О нас</a></li>
+            <li class="nav-item"><a href="" class="nav-item__link">О&nbsp;нас</a></li>
             <li class="nav-item"><a href="" class="nav-item__link">Галерея</a></li>
             <li class="nav-item"><a href="" class="nav-item__link">Каталог</a></li>
             <li class="nav-item"><a href="" class="nav-item__link">События</a></li>
@@ -59,13 +59,11 @@
           </ul>
         </nav>
 
-        <div class="header-login">
-          <button class="btn header-login__btn">
-            <svg class="header-login__img">
-              <use xlink:href="#login" />
-            </svg>Войти
-          </button>
-        </div>
+        <button class="btn header-login__btn">
+          <svg class="header-login__img">
+            <use xlink:href="#login" />
+          </svg>Войти
+        </button>
 
         <div class="header-mediaserch"></div>
       </div>
@@ -76,21 +74,21 @@
         <nav class="submenu-nav">
           <ul class="list-reset submenu-list">
             <li class="submenu-item">
-              <select name="select" class="selectCustom">
-                <option value="Реализм" disabled selected>Реализм</option>
-                <option value="Тинторетто" class="selectCustom--tintoretto">Тинторетто</option>
-                <option value="Фридрих" class="selectCustom--fridrih">Фридрих</option>
-                <option value="Леонардо" class="selectCustom--leonardo">Леонардо</option>
-                <option value="Вероккьо" class="selectCustom--verokkyo">Вероккьо</option>
-                <option value="Реализм" disabled selected>Реализм</option>
-                <option value="Тинторетто" class="selectCustom--tintoretto">Тинторетто</option>
-                <option value="Фридрих" class="selectCustom--fridrih">Фридрих</option>
-              </select>
+              <button type="button" class="btn submenu-item__btn">Реализм</button>
+              <ul class="list-reset hidemenu-list" data-simplebar>
+                <li class="hidemenu-item hidemenu-item--tintoretto"><a href="#tin" class="hidemenu-item__link">Тинторетто</a></li>
+                <li class="hidemenu-item hidemenu-item--fridrih"><a href="#" class="hidemenu-item__link">Фридрих</a></li>
+                <li class="hidemenu-item hidemenu-item--leonardo"><a href="#" class="hidemenu-item__link">Леонардо</a></li>
+                <li class="hidemenu-item hidemenu-item--verokkyo"><a href="#" class="hidemenu-item__link">Вероккьо</a></li>
+                <li class="hidemenu-item hidemenu-item--fridrih"><a href="#" class="hidemenu-item__link">Фридрих</a></li>
+                <li class="hidemenu-item hidemenu-item--leonardo"><a href="#" class="hidemenu-item__link">Леонардо</a></li>
+                <li class="hidemenu-item hidemenu-item--verokkyo"><a href="#" class="hidemenu-item__link">Вероккьо</a></li>
+              </ul>
             </li>
-            <li class="submenu-item"><a href="#" class="submenu-item__link">Импрессионизм</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-item__link">Постимпрессионизм</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-item__link">Авангард</a></li>
-            <li class="submenu-item"><a href="#" class="submenu-item__link">Футуризм</a></li>
+            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Импрессионизм</button></li>
+            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Постимпрессионизм</button></li>
+            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Авангард</button></li>
+            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Футуризм</button></li>
           </ul>
         </nav>
         
@@ -105,7 +103,7 @@
   <main class="main">
     <section class="hero">
       <div class="container hero-content">
-        <h1 class="hero-content__title">Прикоснитесь к&nbsp;прекрасному</h1>
+        <h2 class="hero-content__title">Прикоснитесь к&nbsp;прекрасному</h2>
         <p class="hero-content__descripton">Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт предпосылки для новых предложений.</p>
         <button class="btn hero-content__btn" type="button">Подписаться на&nbsp;рассылку</button>
       </div>
@@ -129,6 +127,8 @@
         </div>
       </div> -->
     </section>
+    <div class="ghf"></div>
+    <div id="tin">Ccskrf</div>
 
   
   </main>

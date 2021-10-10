@@ -69,12 +69,8 @@ svg path {
 
 .container {
   max-width: 1620px;
-  height: 100%;
   margin: 0px auto;
   padding: 0 10px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .list-reset {
@@ -92,4 +88,8 @@ svg path {
   border: none;
   cursor: pointer;
   background-color: transparent;
+}
+
+.ghf {
+  height: 1000px;
 }
