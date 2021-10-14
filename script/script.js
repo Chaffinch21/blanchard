@@ -4,14 +4,14 @@ const hidemenu = document.querySelectorAll('.hidemenu-list');
 hidemenu.forEach(menu => {
   document.addEventListener('click', (ev)=> {
     if (ev.target != menu && ev.target != menu.previousElementSibling){
-      menu.classList.remove('is-open');}
+      menu.parentElement.classList.remove('is-open');}
   
   }, true)
 })
 
 submenuBtn.forEach(toggle => {
   toggle.addEventListener('click', ()=> {
-    toggle.nextElementSibling.classList.toggle('is-open');
+    toggle.parentElement.classList.toggle('is-open');
   })
 })
 

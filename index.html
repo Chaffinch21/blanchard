@@ -38,14 +38,16 @@
           <span class="header-burger-line"></span>
         </button>
 
-        <a href="#" class="header-logo" aria-label="Сайт Blanchard. Художественная галерея">
-          <picture class="header-logo__picture">
-            <source class="header-logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
-            <source class="header-logo__img" media="(max-width: 1024px)" srcset="img/logoheader1024.svg">
-            <source class="header-logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
-            <img class="header-logo__img" src="img/logoheader.svg" alt="логотип Blanchard">
-          </picture>
-        </a>
+        <div class="header-logo">
+          <a href="#" class="header-logo__link" aria-label="Сайт Blanchard. Художественная галерея">
+            <picture class="header-logo__picture">
+              <source class="header-logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
+              <source class="header-logo__img" media="(max-width: 1024px)" srcset="img/logoheader1024.svg">
+              <source class="header-logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
+              <img class="header-logo__img" src="img/logoheader.svg" alt="логотип Blanchard">
+            </picture>
+          </a>
+        </div>
 
         <nav class="header-nav nav">
           <ul class="nav-list list-reset">
@@ -75,6 +77,7 @@
           <ul class="list-reset submenu-list">
             <li class="submenu-item">
               <button type="button" class="btn submenu-item__btn">Реализм</button>
+              
               <ul class="list-reset hidemenu-list" data-simplebar>
                 <li class="hidemenu-item hidemenu-item--tintoretto"><a href="#tin" class="hidemenu-item__link">Тинторетто</a></li>
                 <li class="hidemenu-item hidemenu-item--fridrih"><a href="#" class="hidemenu-item__link">Фридрих</a></li>
@@ -85,10 +88,58 @@
                 <li class="hidemenu-item hidemenu-item--verokkyo"><a href="#" class="hidemenu-item__link">Вероккьо</a></li>
               </ul>
             </li>
-            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Импрессионизм</button></li>
-            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Постимпрессионизм</button></li>
-            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Авангард</button></li>
-            <li class="submenu-item"><button type="button" class="btn submenu-item__btn">Футуризм</button></li>
+            <li class="submenu-item">
+              <button type="button" class="btn submenu-item__btn">Импрессионизм</button>
+              <ul class="list-reset hidemenu-list" data-simplebar>
+                <li class="hidemenu-item hidemenu-item--mone"><a href="#" class="hidemenu-item__link">Моне</a></li>
+                <li class="hidemenu-item hidemenu-item--sisley"><a href="#" class="hidemenu-item__link">Сислей</a></li>
+                <li class="hidemenu-item hidemenu-item--mane"><a href="#" class="hidemenu-item__link">Мане</a></li>
+                <li class="hidemenu-item hidemenu-item--renuar"><a href="#" class="hidemenu-item__link">Ренуар</a></li>
+                <li class="hidemenu-item hidemenu-item--mone"><a href="#" class="hidemenu-item__link">Моне</a></li>
+                <li class="hidemenu-item hidemenu-item--sisley"><a href="#" class="hidemenu-item__link">Сислей</a></li>
+                <li class="hidemenu-item hidemenu-item--mane"><a href="#" class="hidemenu-item__link">Мане</a></li>
+                <li class="hidemenu-item hidemenu-item--renuar"><a href="#" class="hidemenu-item__link">Ренуар</a></li>
+              </ul>
+            </li>
+            <li class="submenu-item">
+              <button type="button" class="btn submenu-item__btn">Постимпрессионизм</button>
+              <ul class="list-reset hidemenu-list" data-simplebar>
+                <li class="hidemenu-item hidemenu-item--vangog"><a href="#" class="hidemenu-item__link">Ван Гог</a></li>
+                <li class="hidemenu-item hidemenu-item--sezann"><a href="#" class="hidemenu-item__link">Сезанн</a></li>
+                <li class="hidemenu-item hidemenu-item--gogen"><a href="#" class="hidemenu-item__link">Гоген</a></li>
+                <li class="hidemenu-item hidemenu-item--sera"><a href="#" class="hidemenu-item__link">Сёра</a></li>
+                <li class="hidemenu-item hidemenu-item--vangog"><a href="#" class="hidemenu-item__link">Ван Гог</a></li>
+                <li class="hidemenu-item hidemenu-item--sezann"><a href="#" class="hidemenu-item__link">Сезанн</a></li>
+                <li class="hidemenu-item hidemenu-item--gogen"><a href="#" class="hidemenu-item__link">Гоген</a></li>
+                <li class="hidemenu-item hidemenu-item--sera"><a href="#" class="hidemenu-item__link">Сёра</a></li>
+              </ul>
+            </li>
+            <li class="submenu-item">
+              <button type="button" class="btn submenu-item__btn">Авангард</button>
+              <ul class="list-reset hidemenu-list" data-simplebar>
+                <li class="hidemenu-item hidemenu-item--kandinskiy"><a href="#" class="hidemenu-item__link">Кандинский</a></li>
+                <li class="hidemenu-item hidemenu-item--marinetti"><a href="#" class="hidemenu-item__link">Маринетти</a></li>
+                <li class="hidemenu-item hidemenu-item--malevich"><a href="#" class="hidemenu-item__link">Малевич</a></li>
+                <li class="hidemenu-item hidemenu-item--picasso"><a href="#" class="hidemenu-item__link">Пикассо</a></li>
+                <li class="hidemenu-item hidemenu-item--kandinskiy"><a href="#" class="hidemenu-item__link">Кандинский</a></li>
+                <li class="hidemenu-item hidemenu-item--marinetti"><a href="#" class="hidemenu-item__link">Маринетти</a></li>
+                <li class="hidemenu-item hidemenu-item--malevich"><a href="#" class="hidemenu-item__link">Малевич</a></li>
+                <li class="hidemenu-item hidemenu-item--picasso"><a href="#" class="hidemenu-item__link">Пикассо</a></li>
+              </ul>
+            </li>
+            <li class="submenu-item">
+              <button type="button" class="btn submenu-item__btn">Футуризм</button>
+              <ul class="list-reset hidemenu-list" data-simplebar>
+                <li class="hidemenu-item hidemenu-item--karra"><a href="#" class="hidemenu-item__link">Карра</a></li>
+                <li class="hidemenu-item hidemenu-item--pratella"><a href="#" class="hidemenu-item__link">Прателла</a></li>
+                <li class="hidemenu-item hidemenu-item--severini"><a href="#" class="hidemenu-item__link">Северини</a></li>
+                <li class="hidemenu-item hidemenu-item--balla"><a href="#" class="hidemenu-item__link">Балла</a></li>
+                <li class="hidemenu-item hidemenu-item--karra"><a href="#" class="hidemenu-item__link">Карра</a></li>
+                <li class="hidemenu-item hidemenu-item--pratella"><a href="#" class="hidemenu-item__link">Прателла</a></li>
+                <li class="hidemenu-item hidemenu-item--severini"><a href="#" class="hidemenu-item__link">Северини</a></li>
+                <li class="hidemenu-item hidemenu-item--balla"><a href="#" class="hidemenu-item__link">Балла</a></li>
+              </ul>
+            </li>
           </ul>
         </nav>
         

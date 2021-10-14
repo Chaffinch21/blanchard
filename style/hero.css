@@ -9,7 +9,7 @@
 .hero-content {
   position: relative;
   z-index: 20;
-  padding-top: 240px;
+  padding-top: 241px;
   padding-bottom: 122px;
   padding-left: 10px;
   display: block;
@@ -38,7 +38,7 @@
 
 .hero-content__btn {
   position: relative;
-  padding: 20px 35px;
+  padding: 22px 35px;
   background-color: var(--fialca-color);
   border-radius: 100px;
   font-weight: 700;
@@ -84,28 +84,6 @@
   border: 2px solid #C283F3;
   transition: border 0.3s ease-in-out;
 }
-
-.swiper-wrapper {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0px;
-  right: 0;
-  bottom: 0;
-  background-color: #222;
-  background-size: cover;
-}
-
-.swiper-slide {
-  opacity: 0 !important;
-}
-
-.swiper-slide-active {
-  opacity: 1 !important;
-  transition: opacity ease-in-out 0.3s;
-}
-
-
 
 @keyframes scaleImg {
   0% {
