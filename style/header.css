@@ -155,7 +155,7 @@
 }
 
 .submenu-item:not(:last-child) {
-  margin-right: 87px;
+  margin-right: 82px;
 }
 
 .submenu-item__btn {
@@ -407,6 +407,7 @@
    opacity: 1;
   /* transition: opacity 0s linear; */
 } 
+
 .header-search {
   display: flex;
   justify-content: space-between;

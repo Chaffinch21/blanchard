@@ -1,0 +1,14 @@
+.aboutus {
+  padding-bottom: 70px;
+}
+
+.aboutus__title {
+  margin-bottom: 15px; 
+}
+
+.aboutus__text {
+  max-width: 68%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 32px;
+}

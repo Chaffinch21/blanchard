@@ -2,6 +2,7 @@
   --dark-background: #000000;
   --text-color: #333333;
   --white-text: #ffffff;
+  --grey-text: #969696;
   --body-background : #FFFFFF;
   --focus-color: #7943A4;
   --hover-color: #C283F3;
@@ -19,6 +20,7 @@ html {
 }
 
 body {
+  position: relative;
   min-width: 320px;
   margin: 0;
   background-color: var(--body-background); 
@@ -90,6 +92,9 @@ svg path {
   background-color: transparent;
 }
 
-.ghf {
-  height: 1000px;
+.title {
+  margin: 0;
+  font-size: 48px;
+  line-height: 65px;
+  font-weight: 400;
 }
