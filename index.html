@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="style/hero.css">
   <link rel="stylesheet" href="style/aboutus.css">
   <link rel="stylesheet" href="style/gallery.css">
+  <link rel="stylesheet" href="style/modal.css">
 </head>
 <body class="body">
   
@@ -170,13 +171,6 @@
       </div>
     </section>
 
-    <section class="modal modal-js">
-      <article class="modal-gallery modal-gallery__js">
-        
-      </article>
-
-    </section>
-
     <section class="gallery">
       <div class="container gallery__container">
         <div class="gallery__content">
@@ -191,7 +185,7 @@
               <option class ="select-item" value="sculpture" data-art="sculpture">Скульптура</option>
             </select>
           </div>
-          <p class="gallery-description">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <span class="gallery-description--highlight">авторизуйтесь</span>, либо воспользуйтесь лицензией. </p>
+          <p class="gallery-description">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery-description__link">авторизуйтесь</a>, либо воспользуйтесь лицензией. </p>
         </div>
         
         <div class="gallery-slider swiper swiper-container mySwiper">
@@ -210,8 +204,17 @@
         </div>
       </div>
     </section>
+
+
   
   </main>
+
+  <div class="modal modal-js">
+    <article class="modal-gallery modal-gallery__js">
+      
+    </article>
+
+  </div>
 
 </body>
 </html>

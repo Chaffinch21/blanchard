@@ -7,6 +7,7 @@ const catalogList = document.querySelector('.swiper-wrapper');
 const catalogBtns = document.querySelector('#selectCustom');
 const galleryPagination = document.querySelector('.swiper-pagination');
 
+
 //открытие и закрытие подменю
 hidemenu.forEach(menu => {
   document.addEventListener('click', (ev)=> {
@@ -33,11 +34,10 @@ const choices = new Choices(selectEl, {
   renderSelectedChoices: false,
 })
 
-// selectEl.addEventListener('choice', function(el){
-
-//   el.style.display = "none";
+// const containerOuter = document.querySelector('.choise')
+// containerOuter.addEventListener('showDropdown', function(){
+//   console.log(1)
 // })
-
 
 
 // слайдер галерея
@@ -60,7 +60,7 @@ let swiperGallery = new Swiper(".mySwiper", {
   },
 });
 
-const loadCatalog = (art) => {
+const loadGallery = (art) => {
   catalogList.innerHTML = '';
   galleryPagination.innerHTML = '';
   galleryModalBlock.innerHTML = '';
@@ -98,11 +98,11 @@ const loadCatalog = (art) => {
         
                 galleryModalBlock.innerHTML = `
                 <img src="${item.big}" alt="${item.title}" class="modal-gallery__img">
-                <div class="modal-gallery__descr gallery-descr">
-                  <h3 class="gallery-descr__autor">${item.author}</h3>
-                  <h4 class="gallery-descr__title">${item.title}</h4>
-                  <span class="gallery-descr__year">${item.year}</span>
-                  <p class="gallery-descr__text" data-simplebar>${item.descr}</p>
+                <div class="modal-gallery__descr modal-descr">
+                  <h3 class="modal-descr__autor">${item.author}</h3>
+                  <h4 class="modal-descr__title">${item.title}</h4>
+                  <span class="modal-descr__year">${item.year}</span>
+                  <p class="modal-descr__text" data-simplebar>${item.descr}</p>
                 </div>
                 <button type="button" class="btn modal-gallery__btn modal-close__js" aria-label="закрыть модальное окно"></button>
                 `;
@@ -129,12 +129,12 @@ const loadCatalog = (art) => {
     });
 };
 
-loadCatalog('painting');
+loadGallery('painting');
 
         
 
 
 catalogBtns.addEventListener('change', (e) => {
     const art = e.currentTarget.value;
-    loadCatalog(art);
+    loadGallery(art);
   });

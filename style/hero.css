@@ -1,6 +1,5 @@
 .hero {
   width: 100%;
-  margin-bottom: 80px;
 }
 
 .swiper-container {
@@ -120,7 +119,6 @@
 }
 
 .hero {
-  height: 800px;
   background: url("../img/slide1.jpg") no-repeat;
   animation: 20s scaleImg  ease infinite;  
 }
