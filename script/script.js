@@ -117,7 +117,6 @@ const loadGallery = (art) => {
             console.log(id);
             loadModal(id);
           });
-          
         })
         
         galleryModal.addEventListener('click',(ev)=>{
@@ -130,8 +129,6 @@ const loadGallery = (art) => {
 };
 
 loadGallery('painting');
-
-        
 
 
 catalogBtns.addEventListener('change', (e) => {
