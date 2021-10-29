@@ -67,7 +67,7 @@
 .modal-descr__text {
   margin: 0;
   font-weight: 400;
-  padding-right: 0px;
+  padding-right: 10px;
   width: 400px;
   height: 220px;
   font-size: 16px;
@@ -78,7 +78,7 @@
   top: 40px;
   z-index: 2;
   bottom: 40px;
-  right: 19px;
+  right: 0px;
   width: 2px;
   background: #fff;
 }
