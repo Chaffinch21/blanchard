@@ -1,6 +1,7 @@
 .gallery {
   background: url('../img/gallery-fon.jpg');
   color: var(--white-text);
+  margin-bottom: 80px;
 }
 
 .gallery__container {

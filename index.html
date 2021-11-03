@@ -5,12 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script/swiper.min.js"></script>
   <script src="script/choices.min.js"></script>
   <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
-  <script src="script/script.js" defer></script>
-
   <link rel="icon" href="img/favicon.svg" type="image/x-icon">
   <link rel="stylesheet" href="style/normalize.css">
   <link rel="stylesheet" href="style/choices.min.css">
@@ -22,7 +19,11 @@
   <link rel="stylesheet" href="style/hero.css">
   <link rel="stylesheet" href="style/aboutus.css">
   <link rel="stylesheet" href="style/gallery.css">
+  <link rel="stylesheet" href="style/catalog.css">
   <link rel="stylesheet" href="style/modal.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+  <script src="script/script.js" defer></script>
 </head>
 <body class="body">
   
@@ -205,7 +206,112 @@
       </div>
     </section>
 
+    <section class="catalog">
+      <div class="container catalog-container">
+        <div class="catalog-head">
+          <h2 class="title catalog-head__title">Каталог</h2>
+          <ul class="list-reset catalog-head__list country-list">
+            <li class="country-item">
+              <button class="btn country-btn country-btn--france" aria-label="Изменить страну на Франция" data-country="france"></button>
+            </li>
+            <li class="country-item">
+              <button class="btn country-btn country-btn--germany" aria-label="Изменить страну на Германия" data-country="germany"></button>
+            </li>
+            <li class="country-item">
+              <button class="btn country-btn country-btn--italy country-btn--active" aria-label="Изменить страну на Италия" data-country="italy"></button>
+            </li>
+            <li class="country-item">
+              <button class="btn country-btn country-btn--russia" aria-label="Изменить страну на Россия" data-country="russia"></button>
+            </li>
+            <li class="country-item">
+              <button class="btn country-btn country-btn--belgium" aria-label="Изменить страну на Бельгия" data-country="belgium"></button></li>
+          </ul>
+        </div>
 
+        <div class="catalog-content">
+          <p class="catalog-descr">
+            Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально разнесены на&nbsp;независимые элементы.
+          </p>
+          <div class="catalog-info">
+
+          
+          <div class="catalog-painter painter">
+            <img class="painter-img" src="img/domenico.jpg" alt="Доменико Гирландайо">
+            <h3 class="painter-name">Доменико Гирландайо</h3>
+            <span class="painter-year">2 июня 1448 — 11 января 1494.</span>
+            <p class="painter-descr">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того времени).</p>
+          </div>
+          <div class="catalog-accordion ">
+            <ul class="list-reset accordion-hronolist">
+              <li class="accordion accordion-hronoitem ">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="14">
+                  <span class="accordion-hronoitem__head">C 1400 по 1499 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="15">
+                  <span class="accordion-hronoitem__head">C 1500 по 1599 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="16">
+                  <span class="accordion-hronoitem__head">C 1600 по 1699 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="17">
+                  <span class="accordion-hronoitem__head">C 1700 по 1799 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="18">
+                  <span class="accordion-hronoitem__head">C 1800 по 1899 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="19">
+                  <span class="accordion-hronoitem__head">C 1900 по 1999 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+
+              <li class="accordion accordion-hronoitem">
+                <button type="button" class="btn accordion-hronoitem__btn" data-year="20">
+                  <span class="accordion-hronoitem__head">C 2000 г.</span> <span class ="accordion-hronoitem__arrow"></span>
+                </button>
+                <ul class="list-reset accordion-painterlist">
+                  
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
   
   </main>
 
