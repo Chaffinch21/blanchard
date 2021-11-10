@@ -6,11 +6,15 @@ const galleryModalBlock = document.querySelector('.modal-gallery__js');
 const catalogList = document.querySelector('.swiper-wrapper');
 const catalogBtns = document.querySelector('#selectCustom');
 const galleryPagination = document.querySelector('.swiper-pagination');
+const galleryNav = document.querySelector('.gallery-slider__nav');
 const catalogDescr = document.querySelector('.catalog-descr');
 const cauntryBtns = document.querySelectorAll('.country-btn');
 const hronoList = document.querySelectorAll('.accordion-painterlist');
 const hronoItem = document.querySelectorAll('.accordion-hronoitem');
 const accordionBtns = document.querySelectorAll('.accordion-hronoitem__btn');
+const eventsBtn = document.querySelector('.events-btn');
+const eventsList = document.querySelector('.events-list');
+const catalogPainter = document.querySelector('.catalog-painter');
 
 
 //открытие и закрытие подменю
@@ -69,9 +73,11 @@ const loadGallery = (art) => {
       return response.json();
     })
     .then((data) => {
+      let count = 0;
       for (item of data) {
         
         if (item.art == art) {
+          count += 1;
           catalogList.innerHTML += `
             <div class="swiper-slide gallery-slide">
               <button class="btn gallery-slide__btn gallery-btn__js" data-id="${item.id}" type="button">
@@ -80,6 +86,10 @@ const loadGallery = (art) => {
             </div>
           `;
         }
+
+        if (count>9){
+          galleryNav.classList.add('visible');
+        } else {galleryNav.classList.remove('visible')};
         swiperGallery.update();
         const galleryBtn = document.querySelectorAll('.gallery-btn__js');
 
@@ -140,10 +150,10 @@ catalogBtns.addEventListener('change', (e) => {
   $( function() {
     $( ".accordion" ).accordion({
       heightStyle: "content",
-      refresh: true,
-      active: false,
-      animate: 300,
       collapsible: true,
+      active: 0,
+      refresh: true,
+      animate: 300,
     });
   })
 
@@ -161,57 +171,114 @@ catalogBtns.addEventListener('change', (e) => {
           if (item.country == country) {
             catalogDescr.innerHTML = `${item.text}`;                    
           }
-
+          $( ".accordion" ).accordion("refresh");
         }
       });
   };
 
-  loadCatalog('italy');
-  console.log(accordionBtns);
+  const loadPainter = (paint) => {
+    catalogPainter.innerHTML = '';
+    fetch('data/painter.json')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+   
+        for (man of data){
+          let countryPainter = man.country;
+          console.log(document.querySelector(`.accordion-hronoitem__btn[aria-expanded="true"]`).nextElementSibling.firstElementChild.classList.contains('accordion-empty'));
+           if(document.querySelector(`.accordion-hronoitem__btn[aria-expanded="true"]`).nextElementSibling.firstElementChild.classList.contains('accordion-empty')){
+            catalogPainter.innerHTML = `
+              <img class="painter-img" src="/img/no-painter.jpg" alt="художник отсутствует">
+              <h3 class="painter-name">Что мы о нём знаем?</h3>
+              <p class="painter-descr">Пока ничего... Зато мы точно знаем, что в галерее есть на что посмотреть!</p>
+              <a href="#gallery" class="accordion-empty__link">В галерею</a>
+              `;
+              return; 
+           }
+          if (paint == countryPainter) {
+            catalogPainter.innerHTML = `
+              <img class="painter-img" src="${man.img}" alt="${man.painter}">
+              <h3 class="painter-name">${man.painter}</h3>
+              <span class="painter-year">${man.years}</span>
+              <p class="painter-descr">${man.descr}</p>
+            `;
+           
+              document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
+              return;            
+          }
+          if (man.painter == paint){
+            catalogPainter.innerHTML = `
+              <img class="painter-img" src="${man.img}" alt="${man.painter}">
+              <h3 class="painter-name">${man.painter}</h3>
+              <span class="painter-year">${man.years}</span>
+              <p class="painter-descr">${man.descr}</p>
+            `;
+            document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
+          } 
+        }
+      });
+  };
+
+  const loadAccordion = (countryActive, yearActive) => {
     fetch('data/painter.json')
     .then((response) => {
       return response.json();
     })
     .then((painters) => {
-        accordionBtns.forEach(el => {
-            el.addEventListener('click', function(ev){
-              ev.currentTarget.nextElementSibling.innerHTML = '';
-              for (man of painters) {
-                const countryActive = document.querySelector('.country-btn--active').dataset.country;
-                const year = ev.currentTarget.dataset.year;
-                if ((man.country == countryActive) &&(man.year == year)){
-                  ev.currentTarget.nextElementSibling.innerHTML += `
-                  <li class="accordion-painteritem">
-                    <button class="btn accordion-painteritem__btn" type="button" data-painter = "${man.painter}">${man.painter}</button>
-                  </li>
-                  `;
-                }
-                const painterItemBtns = document.querySelectorAll('.accordion-painteritem__btn');
-                const catalogPainter = document.querySelector('.catalog-painter');
-                painterItemBtns.forEach(el=>{
-                  
-                  el.addEventListener('click', function(){
-                    catalogPainter.innerHTML = '';
-                    console.log(man.painter);
-                    for (man of painters){
-                      if (man.painter == el.textContent){
-                        catalogPainter.innerHTML = `
-                          <img class="painter-img" src="${man.img}" alt="${man.painter}">
-                          <h3 class="painter-name">${man.painter}</h3>
-                          <span class="painter-year">${man.years}</span>
-                          <p class="painter-descr">${man.descr}</p>
-                        `;
-                      }
-                    }
-                    
-                  })
-                })
-              }   
-                
-              })
+      for (man of painters) {
+        if ((man.country == countryActive) &&(man.year == yearActive)){
+          document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.innerHTML += `
+          <li class="accordion-painteritem">
+            <button class="btn accordion-painteritem__btn" type="button" data-painter = "${man.painter}">${man.painter}</button>
+          </li>
+          `;
+        }
+        const painterItemBtns = document.querySelectorAll('.accordion-painteritem__btn');
+        
+        painterItemBtns.forEach(el=>{
+          
+          el.addEventListener('click', function(){
+            catalogPainter.innerHTML = '';
+            painterItemBtns.forEach(elem=>{
+              elem.classList.remove('active');
+            });
+            loadPainter(el.textContent);
           })
-     
-      }); 
+        })
+      }
+      console.log(document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.childElementCount);
+      if (document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.childElementCount == ''){
+        document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.innerHTML += `
+          <li class="accordion-painteritem accordion-empty">
+            <div class="accordion-empty__img"></div>
+            <div class="accordion-empty__content">
+              <h3 class="accordion-empty__title">Здесь пока пусто</h3>
+              <p class="accordion-empty__text">А в галерее вы всегда можете найти что-то интересное для себя</p>
+              <a href="#gallery" class="accordion-empty__link">В галерею</a>
+            </div>
+          </li>
+          `;
+      }
+      $( ".accordion" ).accordion("refresh");
+    })
+  };
+
+  
+  
+  loadCatalog('italy');
+  loadAccordion('italy', 14);
+  loadPainter('italy');
+  // painterItemBtns[0].classList.add('active');
+
+  accordionBtns.forEach(el => {
+    el.addEventListener('click', function(ev){
+    ev.currentTarget.nextElementSibling.innerHTML = '';
+    const year = ev.currentTarget.dataset.year;
+    const countryActive = document.querySelector('.country-btn--active').dataset.country;
+    loadAccordion(countryActive, year);
+    })
+  })
   
   cauntryBtns.forEach(el => {
     el.addEventListener('click', (e) => {
@@ -220,10 +287,25 @@ catalogBtns.addEventListener('change', (e) => {
 
       e.currentTarget.classList.add('country-btn--active');
       loadCatalog(country);
+      
       $( ".accordion" ).accordion("refresh");
-       $( ".accordion" ).accordion( "option", "activate", false );
+       $( ".accordion" ).accordion( "option", "active", 0 );
+       loadAccordion(country, 14);
+       loadPainter(country);
       hronoList.forEach(el =>{
         el.innerHTML='';
       })
     });
+  })
+
+  //события
+  eventsBtn.addEventListener('click', function(ev){
+    ev.preventDefault();
+    eventsList.classList.toggle('is-open');
+    if(eventsList.classList.contains('is-open')){
+      eventsBtn.textContent = 'Свернуть'
+    }
+    if(!eventsList.classList.contains('is-open')){
+      eventsBtn.textContent = 'Все события'
+    }
   })

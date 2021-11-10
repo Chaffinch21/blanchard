@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="style/aboutus.css">
   <link rel="stylesheet" href="style/gallery.css">
   <link rel="stylesheet" href="style/catalog.css">
+  <link rel="stylesheet" href="style/events.css">
   <link rel="stylesheet" href="style/modal.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
@@ -172,7 +173,7 @@
       </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <div class="container gallery__container">
         <div class="gallery__content">
           <h2 class="title gallery__title">Галерея</h2>
@@ -206,7 +207,7 @@
       </div>
     </section>
 
-    <section class="catalog">
+    <section class="catalog" id="catalog">
       <div class="container catalog-container">
         <div class="catalog-head">
           <h2 class="title catalog-head__title">Каталог</h2>
@@ -242,8 +243,8 @@
             <p class="painter-descr">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того времени).</p>
           </div>
           <div class="catalog-accordion ">
-            <ul class="list-reset accordion-hronolist">
-              <li class="accordion accordion-hronoitem ">
+            <ul class="accordion list-reset accordion-hronolist">
+              <li class="accordion-hronoitem ">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="14">
                   <span class="accordion-hronoitem__head">C 1400 по 1499 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -252,7 +253,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="15">
                   <span class="accordion-hronoitem__head">C 1500 по 1599 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -261,7 +262,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="16">
                   <span class="accordion-hronoitem__head">C 1600 по 1699 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -270,7 +271,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="17">
                   <span class="accordion-hronoitem__head">C 1700 по 1799 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -279,7 +280,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="18">
                   <span class="accordion-hronoitem__head">C 1800 по 1899 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -288,7 +289,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="19">
                   <span class="accordion-hronoitem__head">C 1900 по 1999 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -297,7 +298,7 @@
                 </ul>
               </li>
 
-              <li class="accordion accordion-hronoitem">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="20">
                   <span class="accordion-hronoitem__head">C 2000 г.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -310,6 +311,90 @@
           </div>
         </div>
         </div>
+      </div>
+    </section>
+
+    <section class="events">
+      <div class="container events-container">
+        <h2 class="title events-title">События</h2>
+        <ul class="list-reset events-list">
+          <li class="events-item">
+            <article class="events-article">
+              <img src="/img/events1.jpg" alt="Книжная гравюра" class="events-article__img">
+              <div class="events-article__content events-content">
+                <div class="events-content__descr">
+                  <span class="events-content__place">Музей им. Щусева</span>
+                  <span class="events-content__date">с 20 марта по 30 апреля</span>
+                </div>
+                <h3 class="events-content__title">Книжная гравюра в живом восприятии</h3>
+                <p class="events-content__text">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и сын Ридольфо.</p>
+                <a href="#" class="events-content__link">Подробнее</a>
+              </div>
+            </article>
+          </li>
+
+          <li class="events-item">
+            <article class="events-article">
+              <img src="/img/events2.jpg" alt="Дмитрий Петров и Сергей Ильин" class="events-article__img">
+              <div class="events-article__content events-content">
+                <div class="events-content__descr">
+                  <span class="events-content__place">ММОМА</span>
+                  <span class="events-content__date">24 марта 19:00</span>
+                </div>
+                <h3 class="events-content__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+                <p class="events-content__text">Высокий уровень вовлечения представителей целевой аудитории является четким доказательством простого факта.</p>
+                <a href="#" class="events-content__link">Подробнее</a>
+              </div>
+            </article>
+          </li>
+
+          <li class="events-item">
+            <article class="events-article">
+              <img src="/img/events3.jpg" alt="Выставка «Формация 2020»" class="events-article__img">
+              <div class="events-article__content events-content">
+                <div class="events-content__descr">
+                  <span class="events-content__place">Еврейский музей</span>
+                  <span class="events-content__date">с 31 марта по 21 апреля</span>
+                </div>
+                <h3 class="events-content__title">Выставка «Формация 2020»</h3>
+                <p class="events-content__text">Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет важную роль в&nbsp;формировании глубокомысленных рассуждений.</p>
+                <a href="#" class="events-content__link">Подробнее</a>
+              </div>
+            </article>
+          </li>
+
+          <li class="events-item">
+            <article class="events-article">
+              <img src="/img/events4.jpg" alt="Виды выставки" class="events-article__img">
+              <div class="events-article__content events-content">
+                <div class="events-content__descr">
+                  <span class="events-content__place">Третьяковка на Крымском валу</span>
+                  <span class="events-content__date">с 30 марта по 30 апреля</span>
+                </div>
+                <h3 class="events-content__title">XXIV Международная биеннале молодого искусства</h3>
+                <p class="events-content__text">Внезапно, реплицированные с зарубежных источников, современные исследования.</p>
+                <a href="#" class="events-content__link">Подробнее</a>
+              </div>
+            </article>
+          </li>
+
+          <li class="events-item">
+            <article class="events-article">
+              <img src="/img/events5.jpg" alt="Джон Винзор. Фотография." class="events-article__img">
+              <div class="events-article__content events-content">
+                <div class="events-content__descr">
+                  <span class="events-content__place">ММАМ</span>
+                  <span class="events-content__date">с 8 апреля по 20 мая</span>
+                </div>
+                <h3 class="events-content__title">Джон Винзор. Фотографии из серии «Метафора серебра»</h3>
+                <p class="events-content__text">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо.</p>
+                <a href="#" class="events-content__link">Подробнее</a>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+        <button type="button" class="btn events-btn">Все события</button>
       </div>
     </section>
   

@@ -205,6 +205,11 @@
   display: flex;
   justify-content: start;
   align-items: flex-end;
+  visibility: hidden;
+}
+
+.gallery-slider__nav.visible {
+  visibility: visible;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
