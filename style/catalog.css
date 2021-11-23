@@ -29,6 +29,7 @@
   height: 46px;
   padding: 0px;
   background-repeat: no-repeat;
+  transition: filter .3s ease-in-out;
 }
 
 .country-btn::after {
@@ -188,6 +189,7 @@
 
 .ui-accordion .ui-accordion-header {
   display: flex;
+  padding-right: 0;
 }
 
 .accordion-hronoitem__head {
@@ -217,8 +219,8 @@
 .accordion-hronoitem__arrow::after {
   content: "";
   position: absolute;
-  top: 18px;
-  left: 18px;
+  top: 17px;
+  left: 17px;
   border-left: solid 1px var(--dark-background);
   border-top: solid 1px var(--dark-background);
   width: 12px;
@@ -258,7 +260,7 @@
 
 .accordion-hronoitem__btn[aria-selected="true"] .accordion-hronoitem__arrow::after,
 .accordion-hronoitem__btn:active .accordion-hronoitem__arrow::after{
-  top: 18px;
+  top: 20px;
   transform: rotate(45deg);
 }
 
@@ -272,6 +274,15 @@
 
 .accordion-hronoitem__btn:hover::after {
   background-color: var(--fialca-color);
+  z-index: 100;
+}
+
+.accordion-hronoitem__btn[aria-expanded="true"]::after,
+.accordion-hronoitem__btn[aria-expanded="true"]::before{
+  background-color: var(--fialca-color);
+}
+
+.accordion-hronoitem__btn[aria-expanded="true"]::after {
   z-index: 100;
 }
 
@@ -294,16 +305,18 @@
   /* display: grid;
   grid-template-columns: repeat( 3, minmax(170px, 1fr) );
   grid-gap: 20px; */
-  padding-top: 32px;
-  padding-bottom: 20px;
+  padding-top: 27px;
+  padding-bottom: 25px;
   padding-right: 72px;
+  margin-left: -5px;
   max-height: 364px;
   /* height: 338px !important; */
 }
 
 .accordion-painteritem {
   display: inline-block;
-  margin-bottom: 14px;
+  padding: 0;
+  margin-bottom: 4px;
   width: fit-content;
   text-align: right;
 }
@@ -312,7 +325,7 @@
   position: relative;
   text-align: right;
   margin: 0;
-  padding: 0;
+  padding: 5px;
   color: var(--text-color);
   transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
@@ -345,8 +358,8 @@
 }
 
 .accordion-painteritem__btn.active {
-  background-color: var(--fialca-color);
-  color: var(--white-text);
+  background-color: transparent;
+  color: var(--focus-color);
 }
 
 .accordion-painteritem__btn:hover::before {

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "category": ["all", "bestseller"],
+    "author": "Иттен, Иоханнес",
+    "price": "620",
+    "name": "Искусство цвета",
+    "img":"./data/editions/card1.jpg"
+  },
+  {
+    "id": 2,
+    "category": ["all", "art"],
+    "author": "Рудер, Эмиль",
+    "price": "2450",
+    "name": "Типографика",
+    "img":"./data/editions/card2.jpg"
+  },
+  {
+    "id": 3,
+    "category": ["all", "architecture"],
+    "author": "Гордон, Юрий",
+    "price": "2200",
+    "name": "Книга про буквы",
+    "img":"./data/editions/card3.jpg"
+  },
+  {
+    "id": 4,
+    "category": ["all", "design"],
+    "author": "Кричевский, Владимир",
+    "price": "1100",
+    "name": "Николай Ильин",
+    "img":"./data/editions/card4.jpg"
+  },
+  {
+    "id": 5,
+    "category": ["all", "fashion"],
+    "author": "Мюллер-Брокманн, Йозеф",
+    "price": "1450",
+    "name": "Модульные сетки в граф...",
+    "img":"./data/editions/card5.jpg"
+  },
+  {
+    "id": 6,
+    "category": ["all", "children"],
+    "author": "Хеллер, Чваст",
+    "price": "1450",
+    "name": "Эволюция графических ст...",
+    "img":"./data/editions/card6.jpg"
+  },
+  {
+    "id": 7,
+    "category": ["all", "literature"],
+    "author": "Арнхейм, Рудольф",
+    "price": "2200",
+    "name": "Искусство и визуальное в...",
+    "img":"./data/editions/card7.jpg"
+  }
+]

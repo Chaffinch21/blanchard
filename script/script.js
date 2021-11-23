@@ -3,7 +3,7 @@ const hidemenu = document.querySelectorAll('.hidemenu-list');
 const galleryModal = document.querySelector('.modal-js');
 const modalCloseBtn = document.querySelector('.modal-close__js');
 const galleryModalBlock = document.querySelector('.modal-gallery__js'); 
-const catalogList = document.querySelector('.swiper-wrapper');
+const catalogList = document.querySelector('.swiper-gallery__wrapper');
 const catalogBtns = document.querySelector('#selectCustom');
 const galleryPagination = document.querySelector('.swiper-pagination');
 const galleryNav = document.querySelector('.gallery-slider__nav');
@@ -15,6 +15,10 @@ const accordionBtns = document.querySelectorAll('.accordion-hronoitem__btn');
 const eventsBtn = document.querySelector('.events-btn');
 const eventsList = document.querySelector('.events-list');
 const catalogPainter = document.querySelector('.catalog-painter');
+const editionsSlider = document.querySelector('.swiper-editions__wrapper');
+const editionsPagination = document.querySelector('.swiperEd-pagination');
+const editionsNav = document.querySelector('.editions-slider__nav');
+const editionsCheck = document.querySelectorAll('.check__input');
 
 
 //открытие и закрытие подменю
@@ -186,7 +190,6 @@ catalogBtns.addEventListener('change', (e) => {
    
         for (man of data){
           let countryPainter = man.country;
-          console.log(document.querySelector(`.accordion-hronoitem__btn[aria-expanded="true"]`).nextElementSibling.firstElementChild.classList.contains('accordion-empty'));
            if(document.querySelector(`.accordion-hronoitem__btn[aria-expanded="true"]`).nextElementSibling.firstElementChild.classList.contains('accordion-empty')){
             catalogPainter.innerHTML = `
               <img class="painter-img" src="/img/no-painter.jpg" alt="художник отсутствует">
@@ -247,7 +250,6 @@ catalogBtns.addEventListener('change', (e) => {
           })
         })
       }
-      console.log(document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.childElementCount);
       if (document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.childElementCount == ''){
         document.querySelector(`.accordion-hronoitem__btn[data-year="${yearActive}"]`).nextElementSibling.innerHTML += `
           <li class="accordion-painteritem accordion-empty">
@@ -309,3 +311,93 @@ catalogBtns.addEventListener('change', (e) => {
       eventsBtn.textContent = 'Все события'
     }
   })
+
+  //editions
+
+  let swiperEditions = new Swiper(".editionsSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 50,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiperEd-pagination",
+      type: 'fraction',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiperEd-button-next',
+      prevEl: '.swiperEd-button-prev',
+    },
+  });
+
+ 
+
+  const loadEditions = (checkArr) => {
+    editionsPagination.innerHTML = '';
+    editionsSlider.innerHTML = '';
+       fetch('data/editions.json')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let count = 0;
+        for (item of data) {
+          let categoryArr = item.category;
+          console.log(checkArr);
+          if (checkArr.length == 0) {
+
+            editionsSlider.innerHTML='';
+          } else {
+            checkArr.forEach(check => {
+              categoryArr.forEach(cat => {
+                if (check === cat) {
+                  count += 1;
+                  editionsSlider.innerHTML += `
+                  <div class="swiper-slide editions-card" data-id="${item.id}">
+                    <img src="${item.img}" alt="${item.name}" class="editions-card__img">
+                    <div class="editions-card__top">
+                      <h4 class="editions-card__title">${item.name}</h4>
+                      <span class="editions-card__price">${item.price}</span>
+                    </div>
+                    <span class="editions-card__autor">${item.author}</span>
+                    <button class="btn editions-card__btn">Заказать</button>
+                  </div>
+                  `;
+                } return;
+              });
+            });
+          }
+          
+  
+          if (count>3){
+            editionsNav.classList.add('visible');
+          } else {editionsNav.classList.remove('visible')};
+          swiperEditions.update();
+        }
+      
+          let checkArray = new Array();
+          editionsCheck.forEach(check => {  
+            check.addEventListener('change', function(e){
+              e.target.classList.toggle('checked');
+              
+                if (e.target.checked){
+                  checkArray.push(e.target.value);
+                } else {
+                  
+                  let i = checkArray.indexOf(check.value, 0);
+                  console.log(i);
+                  console.log(checkArray);
+                  checkArray.splice(i,1);
+                  console.log(checkArray);
+                }
+                    
+              loadEditions(checkArray);
+            });
+      });
+    })
+  }   
+  
+
+  loadEditions(['all']);
+  

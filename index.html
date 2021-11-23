@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="style/gallery.css">
   <link rel="stylesheet" href="style/catalog.css">
   <link rel="stylesheet" href="style/events.css">
+  <link rel="stylesheet" href="style/editions.css">
   <link rel="stylesheet" href="style/modal.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
@@ -56,11 +57,11 @@
 
         <nav class="header-nav nav">
           <ul class="nav-list list-reset">
-            <li class="nav-item"><a href="" class="nav-item__link">О&nbsp;нас</a></li>
-            <li class="nav-item"><a href="" class="nav-item__link">Галерея</a></li>
-            <li class="nav-item"><a href="" class="nav-item__link">Каталог</a></li>
-            <li class="nav-item"><a href="" class="nav-item__link">События</a></li>
-            <li class="nav-item"><a href="" class="nav-item__link">Издания</a></li>
+            <li class="nav-item"><a href="#aboutus" class="nav-item__link">О&nbsp;нас</a></li>
+            <li class="nav-item"><a href="#gallery" class="nav-item__link">Галерея</a></li>
+            <li class="nav-item"><a href="#catalog" class="nav-item__link">Каталог</a></li>
+            <li class="nav-item"><a href="#events" class="nav-item__link">События</a></li>
+            <li class="nav-item"><a href="#editions" class="nav-item__link">Издания</a></li>
             <li class="nav-item"><a href="" class="nav-item__link">Проекты</a></li>
             <li class="nav-item"><a href="" class="nav-item__link">Контакты</a></li>
           </ul>
@@ -166,7 +167,7 @@
       </div>
     </section>
 
-    <section class="aboutus">
+    <section class="aboutus" id="aboutus">
       <div class="container aboutus__container">
         <h2 class="title aboutus__title">О&nbsp;нас</h2>
         <p class="aboutus__text">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как способного принимать собственные решения касаемо распределения внутренних резервов и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип будущего проекта влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития. Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в&nbsp;производственный план целого ряда внеочередных мероприятий с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках спецификации современных стандартов, действия представителей оппозиции набирают популярность среди определенных слоев населения, а&nbsp;значит, должны быть разоблачены.</p>
@@ -199,7 +200,7 @@
             <div class="swiper-button-next"></div>
           </div>
 
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper swiper-gallery__wrapper">
             
           </div>
         
@@ -314,7 +315,7 @@
       </div>
     </section>
 
-    <section class="events">
+    <section class="events" id="events">
       <div class="container events-container">
         <h2 class="title events-title">События</h2>
         <ul class="list-reset events-list">
@@ -392,9 +393,136 @@
               </div>
             </article>
           </li>
-
         </ul>
         <button type="button" class="btn events-btn">Все события</button>
+      </div>
+    </section>
+
+    <section class="editions" id="editions">
+      <div class="container editions-container">
+        <div class="editions-filter">
+          <h2 class="title editions-title">Издания</h2>
+          <div class="editions-checkbox">
+            <h3 class="editions-subtitle checkbox-title">Категории</h3>
+            <ul class="list-reset editions-checkbox__list checkbox-list">
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="bestseller">
+                  <span class="check__box"></span>
+                  <span class="check__text">Бестселлеры</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="art">
+                  <span class="check__box"></span>
+                  <span class="check__text">Искусство</span>
+                </label>
+              </li>
+    
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="architecture">
+                  <span class="check__box"></span>
+                  <span class="check__text">Архитектура</span>
+                </label>
+              </li>
+    
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="design">
+                  <span class="check__box"></span>
+                  <span class="check__text">Дизайн</span>
+                </label>
+              </li>
+    
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="fashion">
+                  <span class="check__box"></span>
+                  <span class="check__text">Мода</span>
+                </label>
+              </li>
+    
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="children">
+                  <span class="check__box"></span>
+                  <span class="check__text">Детям</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="literature">
+                  <span class="check__box"></span>
+                  <span class="check__text">Художественная литература</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="publicism">
+                  <span class="check__box"></span>
+                  <span class="check__text">Публицистика</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="guide">
+                  <span class="check__box"></span>
+                  <span class="check__text">Путеводители</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="philosophy">
+                  <span class="check__box"></span>
+                  <span class="check__text">Философия</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="manual">
+                  <span class="check__box"></span>
+                  <span class="check__text">Учебная литература</span>
+                </label>
+              </li>
+
+              <li class="checkbox-item">
+                <label class="check">
+                  <input type="checkbox" class="check__input" value="magazine">
+                  <span class="check__box"></span>
+                  <span class="check__text">Журналы и газеты</span>
+                </label>
+              </li>
+            </ul>
+            <h3 class="editions-subtitle">Цена</h3>
+            <div class="editions-price">
+              От <input class="editions-price__input min-price" type="text" value="50">
+              до <input class="editions-price__input max-price" type="text" value="25 000">
+              руб.
+          </div>
+          </div>
+        </div>
+
+        <div class="editions-slider swiper swiper-editions__container editionsSwiper">
+          <div class="editions-slider__nav">
+            <div class="swiperEd-button-prev"></div>
+
+            <div class="swiperEd-pagination"></div>
+
+            <div class="swiperEd-button-next"></div>
+          </div>
+
+          <div class="swiper-wrapper swiper-editions__wrapper">
+            
+          </div>
+        </div>
       </div>
     </section>
   
