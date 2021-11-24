@@ -60,6 +60,7 @@
   width: 12px;
   height: 12px;
   border: 1px solid #ffffff;
+  transition: border .3s ease-in-out;
 }
 
 .check__input + .check__box::before {
@@ -75,12 +76,29 @@
   transition: opacity .3s ease-in-out;
 }
 
+.check__text{
+  color: var(--white-text);
+  transition: color .3s ease-in-out;
+}
+
 .check__input:checked + .check__box::before {
   opacity: 1;
 }
 
 .check__input:focus + .check__box {
   border: 1px solid var(--hover-color);
+}
+
+.check__input:focus ~ .check__text {
+  color: var(--hover-color);
+}
+
+.checkbox-item:hover .check__box{
+  border: 1px solid var(--hover-color);
+}
+
+.checkbox-item:hover .check__text {
+  color: var(--hover-color);
 }
 
 .editions-price {
@@ -107,6 +125,20 @@
   background: rgba(157, 92, 208, 0.5);
   border: none;
   outline: none;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+
+.editions-price__input:hover {
+  background: var(--fialca-color);
+}
+
+.editions-price__input:focus {
+  background: var(--fialca-color);
+}
+
+.editions-price__input:active {
+  background: var(--focus-color);
 }
 
 .swiper-editions__container {

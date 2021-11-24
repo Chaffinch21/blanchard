@@ -400,4 +400,16 @@ catalogBtns.addEventListener('change', (e) => {
   
 
   loadEditions(['all']);
-  
+
+
+  document.querySelectorAll('.editions-price__input').forEach(
+    el=>{
+      el.addEventListener('mousedown', function(){
+        this.style.background = '#7943A4';
+      })
+      el.addEventListener('change', function(){
+        this.style.background = 'rgba(157, 92, 208, 0.5)';
+      })
+    }
+  ) 
+
