@@ -314,20 +314,18 @@ catalogBtns.addEventListener('change', (e) => {
 
   //editions
 
-  let swiperEditions = new Swiper(".editionsSwiper", {
-    slidesPerView: 3,
+  let swiperEditions = new Swiper('.editions-slider', {
+    loop: false,
+    slidesPerView: 'auto',
     spaceBetween: 50,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
     pagination: {
-      el: ".swiperEd-pagination",
-      type: 'fraction',
-      clickable: true,
+      el: '.swiperEd-pagination',
+      type: 'fraction'
     },
     navigation: {
       nextEl: '.swiperEd-button-next',
       prevEl: '.swiperEd-button-prev',
+      disabledClass: 'swiperEd-button-disabled'
     },
   });
 
@@ -358,7 +356,7 @@ catalogBtns.addEventListener('change', (e) => {
                     <img src="${item.img}" alt="${item.name}" class="editions-card__img">
                     <div class="editions-card__top">
                       <h4 class="editions-card__title">${item.name}</h4>
-                      <span class="editions-card__price">${item.price}</span>
+                      <span class="editions-card__price">${item.price} руб</span>
                     </div>
                     <span class="editions-card__autor">${item.author}</span>
                     <button class="btn editions-card__btn">Заказать</button>
@@ -371,8 +369,9 @@ catalogBtns.addEventListener('change', (e) => {
           
   
           if (count>3){
-            editionsNav.classList.add('visible');
-          } else {editionsNav.classList.remove('visible')};
+            editionsNav.classList.add('visible');} 
+          else {editionsNav.classList.remove('visible')};
+
           swiperEditions.update();
         }
       
@@ -386,10 +385,7 @@ catalogBtns.addEventListener('change', (e) => {
                 } else {
                   
                   let i = checkArray.indexOf(check.value, 0);
-                  console.log(i);
-                  console.log(checkArray);
                   checkArray.splice(i,1);
-                  console.log(checkArray);
                 }
                     
               loadEditions(checkArray);
@@ -412,4 +408,11 @@ catalogBtns.addEventListener('change', (e) => {
       })
     }
   ) 
+
+  let inputNumber = document.querySelectorAll("input[type='text']");
+  let im = new Inputmask("999 999", {numericInput: true, "placeholder": "", rightAlign: false});
+  inputNumber.forEach(el=>{
+    im.mask(el);
+  })
+  
 

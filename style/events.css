@@ -3,20 +3,21 @@
 }
 
 .events-title {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .events-list {
   display: flex;
-  align-items: flex-start;
   flex-wrap: wrap;
+  align-items: stretch;
+  min-height: 748px;
 }
 
 .events-item {
   display: inline-block;
   width: 31.2%;
   border: 1px solid var(--silver-color);
-  margin-bottom: 48px;
+  margin-bottom: 50px;
 }
 
 .events-item:not(:nth-child(3n)) {
@@ -32,8 +33,8 @@
 }
 
 .events-article {
-  min-height: 695px;
   position: relative;
+  min-height: 100%;
 }
 
 .events-article__content {
@@ -69,64 +70,62 @@
   display: block;
   margin: 0;
   padding-right: 20px;
+  margin-bottom: 15px;
   font-size: 16px;
   line-height: 32px;
 }
 
-.events-content__link {
+.events-article__link {
   position: absolute;
-  bottom: 37px;
-  left: 40px;
-  display: block;
-  padding: 10px;
+  bottom: 35px;
+  left: 50px;
+  display: inline-block;
+  padding-bottom: 10px;
   margin-top: auto;
   color: var(--fialca-color);
   transition: color .3s ease-in-out, background-color .3s ease-in-out;
 }
 
-.events-content__link::before {
+.events-article__link::before {
   content: '';
   position: absolute;
   bottom: 5px;
-  left: 10px;
+  left: 0px;
   height: 1px;
-  width: 80%;
+  width: 100%;
   background-color: var(--fialca-color);
   transition: background-color .3s ease-in-out;
 }
 
-.events-content__link:hover {
+.events-article__link:hover {
   color: var(--focus-color);
 }
 
-.events-content__link:hover::before {
+.events-article__link:hover::before {
   background-color: var(--focus-color);
 }
 
-.events-content__link:focus {
+.events-article__link:focus {
   color: var(--white-text);
   background-color: var(--fialca-color);
 }
 
-.events-content__link:focus::before {
+.events-article__link:focus::before {
   background-color: var(--white-text);
 }
 
-.events-content__link:active {
+.events-article__link:active {
   color: var(--text-color);
   background-color: transparent;
 }
 
-.events-content__link:active::before {
+.events-article__link:active::before {
   background-color: var(--text-color);
 }
 
 .events-btn {
   display: block;
   margin: 0 auto;
-}
-
-.events-btn {
   position: relative;
   padding: 18px 36px;
   background-color: transparent;
