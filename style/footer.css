@@ -1,0 +1,45 @@
+.footer {
+  padding: 50px 0;
+  background-color: #000000;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  margin-right: 0;
+  max-width: 173px;
+}
+
+.social-list {
+  display: inline-block;
+}
+
+.social-item {
+  display: inline-block;
+}
+
+.social-item:not(:last-child) {
+  margin-right: 15px;
+}
+
+.social-item__link {
+  display: block;
+  width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+}
+
+.social-item__link:hover svg path,
+.social-item__link:focus svg path{
+  fill: #ffffff;
+  transition: fill .3s ease-in-out;
+}
+
+.social-item__link:active svg path {
+  fill: var(--fialca-color);
+  transition: fill .3s ease-in-out;
+}

@@ -1,0 +1,263 @@
+.contact {
+
+}
+
+.contact-title {
+  margin-bottom: 15px;
+}
+
+.contact-wrap {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  overflow: hidden;
+  border-top: 1px solid var(--dustygray-color);
+}
+
+.contact-content {
+  flex: 0 0 100%;
+}
+
+.contact-content__container {
+  max-width: 1620px;
+  padding: 0 10px;
+  margin: 0 auto;
+  /*  */
+}
+
+.contact-content__body {
+  width: 30%;
+  padding-top: 125px;
+  padding-bottom: 120px;
+}
+
+.contact-content__title {
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.contact-content__adress {
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.contact-content__call {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.contact-form__input {
+  max-width: 400px;
+  padding: 4px 10px 4px 25px;
+  margin-bottom: 21px;
+  border-radius: 100px;
+  border: 1px solid #333333;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--dustygray-color);
+}
+
+.contact-form__input:hover,
+.contact-form__input:focus {
+  background-color: #eaeaea;
+}
+
+.contact-form__btn {
+  position: relative;
+  max-width: 157px;
+  display: inline;
+  padding: 15px 19px;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 100px;
+  color: var(--fialca-color);
+  border: 2px solid var(--fialca-color);
+  transition: background-color 0.3s ease-out, color 0.3s ease-in;
+}
+
+.contact-form__btn::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 100px;
+  border: 1px solid var(--fialca-color);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+} 
+
+.contact-form__btn:focus::before {
+  opacity: 1;
+}
+
+.contact-form__btn:hover {
+  background-color: var(--fialca-color);
+  color: var(--white-text);
+}
+
+.contact-form__btn:active {
+  color: var(--white-text);
+  background-color: var(--focus-color);
+  border: 2px solid var(--biloba-color);
+}
+
+.contact-form__btn:active::before {
+  opacity: 0;
+}
+
+.messenger-list {
+  display: flex;
+  justify-content: start;
+}
+
+.messenger-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.messenger-item__link {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: block;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.messenger-item__link::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--focus-color);
+  opacity: 0;
+  transition: opasity .3s ease-in-out;
+}
+
+.messenger-item__link:hover,
+.messenger-item__link:focus {
+  opacity: 0.5;
+}
+
+.messenger-item__link:active {
+  opacity: 1;
+}
+
+.messenger-item__link:active::before {
+  opacity: 1;
+}
+
+.whatsap {
+  background-image: url(../img/Whatsapp-Icon.svg);
+}
+
+.telegram {
+  background-image: url(../img/Telegram_2019_Logo.svg);
+}
+
+.contact-map {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 64.5%;
+  height: 700px;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+.ymaps-2-1-79-zoom__plus .ymaps-2-1-79-zoom__icon,
+.ymaps-2-1-79-zoom__minus .ymaps-2-1-79-zoom__icon {
+  background-image: none !important;
+}
+
+.ymaps-2-1-79-zoom {
+  height: 0 !important;
+  width: 40px !important;
+  padding: 39px 0 !important;
+}
+
+.ymaps-2-1-79-float-button {
+  width: 40px !important;
+  height: 40px !important;
+  padding-left: 30px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.ymaps-2-1-79-zoom__plus {
+  position: relative;
+  width: 40px;
+  height: 39px;
+  border-radius: 10px 10px 0 0 !important;
+  background: white;
+}
+
+.ymaps-2-1-79-zoom__plus::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  width: 12px;
+  height: 2px;
+  z-index: 70;
+  background-color: var(--text-color);
+}
+
+.ymaps-2-1-79-zoom__plus::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 19px;
+  width: 2px;
+  height: 12px;
+  z-index: 70;
+  background-color: var(--text-color);
+}
+
+.ymaps-2-1-79-zoom__minus {
+  width: 40px;
+  height: 39px;
+  border-radius: 0px 0px 10px 10px !important;
+  background: white;
+}
+
+.ymaps-2-1-79-zoom__minus::before {
+  content: "";
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  width: 12px;
+  height: 2px;
+  z-index: 70;
+  background-color: var(--text-color);
+}
+
+.ymaps-2-1-79-float-button-icon {
+  width: 30px !important;
+  height: 30px !important;
+}
+
+.ymaps-2-1-79-gotoymaps,
+.ymaps-2-1-79-gototech {
+  display: none !important;
+}

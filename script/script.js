@@ -157,7 +157,9 @@ catalogBtns.addEventListener('change', (e) => {
       collapsible: true,
       active: 0,
       refresh: true,
-      animate: 300,
+      animate: {
+        duration: 1000
+    }
     });
   })
 
@@ -175,7 +177,8 @@ catalogBtns.addEventListener('change', (e) => {
           if (item.country == country) {
             catalogDescr.innerHTML = `${item.text}`;                    
           }
-          $( ".accordion" ).accordion("refresh");
+      
+      $( ".accordion" ).accordion("refresh");
         }
       });
   };
@@ -262,14 +265,15 @@ catalogBtns.addEventListener('change', (e) => {
           </li>
           `;
       }
-      $( ".accordion" ).accordion("refresh");
+      setTimeout('$("#accordion").accordion({collapsible: true, clearStyle: true, autoHeight: true })', 1000);
     })
   };
 
   
   
   loadCatalog('italy');
-  loadAccordion('italy', 14);
+  $( "#accordeon" ).on( "accordioncreate", loadAccordion('italy', 14));
+  // loadAccordion('italy', 14);
   loadPainter('italy');
   // painterItemBtns[0].classList.add('active');
 
@@ -278,7 +282,8 @@ catalogBtns.addEventListener('change', (e) => {
     ev.currentTarget.nextElementSibling.innerHTML = '';
     const year = ev.currentTarget.dataset.year;
     const countryActive = document.querySelector('.country-btn--active').dataset.country;
-    loadAccordion(countryActive, year);
+    $( "#accordeon" ).on( "accordioncreate", loadAccordion(countryActive, year));
+    // loadAccordion(countryActive, year);
     })
   })
   
@@ -409,10 +414,128 @@ catalogBtns.addEventListener('change', (e) => {
     }
   ) 
 
-  let inputNumber = document.querySelectorAll("input[type='text']");
+  //Маска и валидация для инпутов
+
+  let inputNumber = document.querySelectorAll(".editions-price__input");
   let im = new Inputmask("999 999", {numericInput: true, "placeholder": "", rightAlign: false});
   inputNumber.forEach(el=>{
     im.mask(el);
   })
-  
 
+  let inputTel = document.querySelector("input[type='tel']");
+  let maskTel = new Inputmask("+7 (999)-999-99-99");
+  maskTel.mask(inputTel);
+
+  new JustValidate('.contact-form', {
+    rules: {
+      name: {
+        required: true,
+        minLength: 2,
+        maxLength: 10
+      },
+      tel: {
+        required: true,
+        function: (name, value) => {
+          const phone = inputTel.inputmask.unmaskedvalue();
+          return Number(phone) && phone.length === 10;
+        }
+      }
+    },
+    messages: {
+      name:'Недопустимый формат',
+      tel: 'Укажите ваш телефон'
+    }
+  })
+
+  
+  //Всплывающие подсказки
+
+  tippy('#tooltip--one', {
+    content: "Пример современных тенденций - современная методология разработки",
+    theme: 'fialca',
+    placement: 'top',
+    trigger: 'click'
+  });
+
+  tippy('#tooltip--two', {
+    content: "Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции  ",
+    theme: 'fialca',
+    placement: 'top',
+    trigger: 'click'
+  });
+
+  tippy('#tooltip--three', {
+    content: "В стремлении повысить качество",
+    theme: 'fialca',
+    placement: 'top',
+    trigger: 'click'
+  });
+
+  // проекты слайдер
+  let swiperproject = new Swiper('.project-slider', {
+    loop: false,
+    slidesPerView: 'auto',
+    slidesPerGroup: 3,
+    spaceBetween: 48,
+    navigation: {
+      nextEl: '.swiperPr-button-next',
+      prevEl: '.swiperPr-button-prev',
+      disabledClass: 'swiperPr-button-disabled',
+      watchSlidesVisibility: true
+    },
+  });
+
+  //карта 
+  ymaps.ready(init);
+    function init(){
+
+       let myMap = new ymaps.Map("map", {
+            
+          center: [55.75673606897922,37.61399699999993],
+          zoom: 15,
+          controls: []
+        });
+
+        let geoControl = new ymaps.control.GeolocationControl({
+          options: {
+            float: 'none',
+            position: {
+                right: 20,
+                top: 360
+           }
+          }
+        })
+
+        myMap.controls.add(geoControl);
+      
+
+        let zoomControl = new ymaps.control.ZoomControl({
+          options: {
+            float: 'none',
+            position: {
+                right: 20,
+                top: 260
+           },
+              size: 'small'
+          }
+        })
+
+        myMap.controls.add(zoomControl);
+      
+      //   let myGeoObject = new ymaps.GeoObject({
+      //     geometry: {
+      //         type: "Point",
+      //         coordinates: [55.75846806898367,37.60108849999989]
+      //     }
+      // });
+  
+      let myPlacemark = new ymaps.Placemark([55.75846806898367,37.60108849999989], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/placemark.png',
+        iconImageSize: [20, 20],
+        iconImageOffset: [-3, -7]
+    });
+      
+      // myMap.geoObjects.add(myGeoObject); 
+      myMap.geoObjects.add(myPlacemark); 
+      }

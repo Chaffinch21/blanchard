@@ -105,3 +105,9 @@ svg path {
   line-height: 65px;
   font-weight: 400;
 }
+
+svg path {
+  stroke:inherit;
+  stroke-width:inherit;
+  fill:inherit;
+  }
