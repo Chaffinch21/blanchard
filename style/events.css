@@ -1,5 +1,5 @@
 .events {
-  margin-bottom: 80px;
+  margin-bottom: 78px;
 }
 
 .events-title {
@@ -10,18 +10,17 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  min-height: 748px;
 }
 
 .events-item {
   display: inline-block;
-  width: 31.2%;
+  flex-basis: 31.2%;
   border: 1px solid var(--silver-color);
   margin-bottom: 50px;
 }
 
 .events-item:not(:nth-child(3n)) {
-  margin-right: 51px;
+  margin-right: 3.2%;
 }
 
 .events-item:nth-child(n+4) {
@@ -34,7 +33,7 @@
 
 .events-article {
   position: relative;
-  min-height: 100%;
+  min-height: 700px;
 }
 
 .events-article__content {

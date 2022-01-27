@@ -1,0 +1,18 @@
+@media (max-width: 1600px) {
+  .editions-container {
+    padding: 85px 10px 78px;
+  }
+
+  .editions-filter {
+    margin-right: 1.5vw;
+  }
+
+  .editions-price {
+    min-width: 277px;
+  }
+
+  .editions-card__img {
+    min-width: 290px;
+   margin-bottom: 10px;
+  }
+}

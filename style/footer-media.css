@@ -1,0 +1,15 @@
+@media (max-width: 1300px) {
+  .footer {
+    padding: 20px 0;
+    background-color: #000000;
+  }
+
+  .social-item:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  .social-item__link {
+    width: 60px;
+    height: 60px;
+  }
+}

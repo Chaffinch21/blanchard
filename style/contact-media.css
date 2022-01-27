@@ -1,0 +1,33 @@
+@media (max-width:1300px) {
+  .contact-content__container {
+    max-width: 945px;
+  }
+
+  .contact-content__body {
+    width: 47%;
+    padding-bottom: 100px;
+  }
+
+  .contact-form__label {
+    max-width: 33vw;
+  }
+
+  .contact-form {
+    margin-bottom: 37px;
+  }
+
+  .messenger-item:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  .messenger-item__link {
+    width: 60px;
+    height: 60px;
+  }
+
+  .messenger-item__link::before {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+  }
+}

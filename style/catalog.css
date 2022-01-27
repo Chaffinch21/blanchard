@@ -101,7 +101,7 @@
 }
 
 .catalog-painter {
-  max-width: 750px;
+  width: 50vw;
 }
 
 .painter-img {
@@ -132,6 +132,7 @@
 
 .catalog-accordion {
   max-width: 800px;
+  margin-left: 30px;
   width: 100%;
   color: var(--text-color);
 }
@@ -304,13 +305,12 @@
   padding-right: 72px;
   margin-left: -5px;
   max-height: 364px;
-  opacity: 0;
   transition: opacity .5s ease-out;
 }
 
-.accordion-painterlist[aria-hidden="false"] {
+/* .accordion-painterlist[aria-hidden="false"] {
   opacity: 1;
-}
+} */
 
 .accordion-painteritem {
   display: inline-block;
@@ -423,3 +423,5 @@
   color: var(--text-color);
   background-color: transparent;
 }
+
+.ui-accordion-content{ min-height: unset; }

@@ -1,0 +1,35 @@
+@media (max-width: 1600px) {
+  .catalog-painter {
+    min-width: 437px;
+  }
+}
+
+@media (max-width: 1302px) {
+  .catalog-head__list {
+    margin-top: 20px;
+  }
+
+  .catalog-accordion {
+    max-width: 41.6vw;
+    min-width: 437px;
+    margin-left: 50px;
+  }
+
+  .catalog-descr {
+    width: 100%;
+    margin-bottom: 38px;
+  }
+
+  .painter-year {
+    margin-bottom: 7px;
+  }
+
+  .accordion-painterlist {
+    max-height: 464px;
+    padding-right: 0px;
+  }
+
+  .accordion-painteritem:nth-child(n+13) {
+    padding-left: 55px;
+  }
+}

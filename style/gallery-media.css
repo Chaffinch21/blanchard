@@ -1,0 +1,19 @@
+@media (max-width: 1630px) {
+
+  .gallery__content {
+     max-width: 280px;
+   }
+
+}
+
+@media (max-width: 1530px) {
+  .gallery__container {
+    height: 838px;
+  }
+
+  .gallery-slide {
+    max-width: 280px;
+    max-height: 280px;
+  }
+   
+}

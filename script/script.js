@@ -19,6 +19,34 @@ const editionsSlider = document.querySelector('.swiper-editions__wrapper');
 const editionsPagination = document.querySelector('.swiperEd-pagination');
 const editionsNav = document.querySelector('.editions-slider__nav');
 const editionsCheck = document.querySelectorAll('.check__input');
+const burgerBtn = document.querySelector('.header-burger-js');
+const mediaMenu = document.querySelector('.media-menu');
+const mediaMenuBtn = document.querySelector('.media-menu__btn');
+const mediaMenuLink = document.querySelectorAll('.media-nav__link');
+
+//бургер-меню
+burgerBtn.addEventListener('click', function(ev){
+  document.querySelector('.body').classList.toggle('burger-open');
+})
+
+//мобильное меню
+  let heightHero = document.querySelector('.hero').offsetHeight;
+  let heightHeader = document.querySelector('.header').offsetHeight;
+  let heightMediaMenu = heightHero + heightHeader
+  mediaMenu.style.height = heightMediaMenu + 'px';
+window.addEventListener("resize", function(){
+  heightHero = document.querySelector('.hero').offsetHeight;
+  heightHeader = document.querySelector('.header').offsetHeight;
+  heightMediaMenu = heightHero + heightHeader
+  mediaMenu.style.height = heightMediaMenu + 'px';
+});
+
+mediaMenuLink.forEach(el=>{
+  el.addEventListener('click', function(){
+    document.querySelector('.body').classList.remove('burger-open');
+  })
+})
+
 
 
 //открытие и закрытие подменю
@@ -47,14 +75,14 @@ const choices = new Choices(selectEl, {
 })
 
 // слайдер галерея
-let swiperGallery = new Swiper(".mySwiper", {
+let swiperGallery = new Swiper(".gallery-slider", {
   loop: false,
   watchSlidesProgress: true,
   speed: 1000,
   slidesPerView: 'auto',
-  slidesPerColumn: 2,
-  slidesPerGroup: 3,
-  spaceBetween: 50,
+  slidesPerColumn: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 10,
   pagination: {
     el: ".swiper-pagination",
     type: 'fraction',
@@ -64,6 +92,28 @@ let swiperGallery = new Swiper(".mySwiper", {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  breakpoints:{
+    667:{
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      spaceBetween: 34,
+    },
+
+    1024:{
+      spaceBetween: 30,
+      slidesPerView: 2,
+      slidesPerColumn: 2,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+      },
+
+    1301:{
+      spaceBetween: 50,
+      slidesPerView: 3,
+      slidesPerColumn: 2,
+      slidesPerGroup: 1,
+    }
+  }
 });
 
 // Галерея загрузка
@@ -163,8 +213,6 @@ catalogBtns.addEventListener('change', (e) => {
     });
   })
 
-  // setTimeout('$(".accordion").accordion({heightStyle: "content", refresh: true, collapsible: true, active: 1,})', 1000);
-
   const loadCatalog = (country) => {
     catalogDescr.innerHTML = '';
     fetch('data/country.json')
@@ -202,7 +250,7 @@ catalogBtns.addEventListener('change', (e) => {
               `;
               return; 
            }
-          if (paint == countryPainter) {
+          if ((paint == countryPainter) || (man.painter == paint)) {
             catalogPainter.innerHTML = `
               <img class="painter-img" src="${man.img}" alt="${man.painter}">
               <h3 class="painter-name">${man.painter}</h3>
@@ -213,15 +261,15 @@ catalogBtns.addEventListener('change', (e) => {
               document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
               return;            
           }
-          if (man.painter == paint){
-            catalogPainter.innerHTML = `
-              <img class="painter-img" src="${man.img}" alt="${man.painter}">
-              <h3 class="painter-name">${man.painter}</h3>
-              <span class="painter-year">${man.years}</span>
-              <p class="painter-descr">${man.descr}</p>
-            `;
-            document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
-          } 
+          // if (man.painter == paint){
+          //   catalogPainter.innerHTML = `
+          //     <img class="painter-img" src="${man.img}" alt="${man.painter}">
+          //     <h3 class="painter-name">${man.painter}</h3>
+          //     <span class="painter-year">${man.years}</span>
+          //     <p class="painter-descr">${man.descr}</p>
+          //   `;
+          //   document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
+          // } 
         }
       });
   };
@@ -265,25 +313,28 @@ catalogBtns.addEventListener('change', (e) => {
           </li>
           `;
       }
-      setTimeout('$("#accordion").accordion({collapsible: true, clearStyle: true, autoHeight: true })', 1000);
     })
   };
 
-  
+  // document.addEventListener("DOMContentLoaded", () => {
+  //   cauntryBtns.forEach(country =>{
+  //     hronoItem.forEach(el =>{
+  //       loadAccordion(country, el.firstChild.data-year)
+  //     })
+  //   })
+    
+  // });
   
   loadCatalog('italy');
-  $( "#accordeon" ).on( "accordioncreate", loadAccordion('italy', 14));
-  // loadAccordion('italy', 14);
+  $( ".accordion" ).on( "accordioncreate", loadAccordion('italy', 14));
   loadPainter('italy');
-  // painterItemBtns[0].classList.add('active');
 
   accordionBtns.forEach(el => {
     el.addEventListener('click', function(ev){
     ev.currentTarget.nextElementSibling.innerHTML = '';
     const year = ev.currentTarget.dataset.year;
     const countryActive = document.querySelector('.country-btn--active').dataset.country;
-    $( "#accordeon" ).on( "accordioncreate", loadAccordion(countryActive, year));
-    // loadAccordion(countryActive, year);
+    $( ".accordion" ).on( "accordioncreate", loadAccordion(countryActive, year));
     })
   })
   
@@ -297,7 +348,7 @@ catalogBtns.addEventListener('change', (e) => {
       
       $( ".accordion" ).accordion("refresh");
        $( ".accordion" ).accordion( "option", "active", 0 );
-       loadAccordion(country, 14);
+        loadAccordion(country, 14);
        loadPainter(country);
       hronoList.forEach(el =>{
         el.innerHTML='';
@@ -305,7 +356,6 @@ catalogBtns.addEventListener('change', (e) => {
     });
   })
 
-  //события
   eventsBtn.addEventListener('click', function(ev){
     ev.preventDefault();
     eventsList.classList.toggle('is-open');
@@ -321,8 +371,7 @@ catalogBtns.addEventListener('change', (e) => {
 
   let swiperEditions = new Swiper('.editions-slider', {
     loop: false,
-    slidesPerView: 'auto',
-    spaceBetween: 50,
+    // spaceBetween: 50,
     pagination: {
       el: '.swiperEd-pagination',
       type: 'fraction'
@@ -332,6 +381,19 @@ catalogBtns.addEventListener('change', (e) => {
       prevEl: '.swiperEd-button-prev',
       disabledClass: 'swiperEd-button-disabled'
     },
+    breakpoints:{
+      1024:{
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 60,
+      },
+  
+      1300:{
+        spaceBetween: 50,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        }
+    }
   });
 
  
@@ -472,17 +534,32 @@ catalogBtns.addEventListener('change', (e) => {
   });
 
   // проекты слайдер
-  let swiperproject = new Swiper('.project-slider', {
+  let swiperProject = new Swiper('.project-swiper__container', {
     loop: false,
-    slidesPerView: 'auto',
-    slidesPerGroup: 3,
-    spaceBetween: 48,
+    slideClass: ('project-partners'),
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    centerSlides: true,
+    spaceBetween: 50,
     navigation: {
       nextEl: '.swiperPr-button-next',
       prevEl: '.swiperPr-button-prev',
       disabledClass: 'swiperPr-button-disabled',
-      watchSlidesVisibility: true
+      // watchSlidesVisibility: true
     },
+    breakpoints:{
+      
+      1540:{
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 50,
+        },
+      1025: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      }
+    }
   });
 
   //карта 
@@ -491,7 +568,7 @@ catalogBtns.addEventListener('change', (e) => {
 
        let myMap = new ymaps.Map("map", {
             
-          center: [55.75673606897922,37.61399699999993],
+          center: [55.75846806898367,37.60108849999989],
           zoom: 15,
           controls: []
         });

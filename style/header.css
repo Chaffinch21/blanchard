@@ -6,7 +6,12 @@
   width: 100%;
 }
 
+.media-menu {
+  display: none;
+}
+
 .header-menu {
+  position: relative;
   width: 100%;
   background: var(--dark-background);
 }
@@ -22,11 +27,14 @@
 }
 
 .logo {
-  margin-right: 174px;
+  margin-right: 9vw;
+  width: 173px;
+  padding: 30px 0px;
 }
 
 .logo__picture {
   display: flex;
+  width: 100%;
 }
 
 .logo__img {
@@ -36,8 +44,8 @@
 }
 
 .header-nav {
-  padding: 35px 0px;
-  margin-right: 275px;
+  display: block;
+  margin-right: auto;
 }
 
 .nav-list {
@@ -52,7 +60,7 @@
 }
 
 .nav-item:not(:last-child) {
-  margin-right: 50px;
+  margin-right: 2.6vw;
 }
 
 .nav-item__link {
@@ -126,11 +134,12 @@
   transition: color 0.3s ease-in-out;
 }
 
-.header-mediaserch {
+.media-search {
   display: none;
 }
 
 .header-submenu {
+  display: block;
   background: rgba(0, 0, 0, 0.4);
 }
 
@@ -155,7 +164,7 @@
 }
 
 .submenu-item:not(:last-child) {
-  margin-right: 82px;
+  margin-right: 4.3vw;
 }
 
 .submenu-item__btn {

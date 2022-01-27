@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <title>Blanchard</title>
   <script src="script/swiper.min.js"></script>
   <script src="script/choices.min.js"></script>
@@ -18,15 +18,25 @@
   <link rel="stylesheet" href="style/fonts.css">
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/header.css">
+  <link rel="stylesheet" href="style/header-media.css">
   <link rel="stylesheet" href="style/hero.css">
+  <link rel="stylesheet" href="style/hero-media.css">
   <link rel="stylesheet" href="style/aboutus.css">
+  <link rel="stylesheet" href="style/aboutus-media.css">
   <link rel="stylesheet" href="style/gallery.css">
+  <link rel="stylesheet" href="style/gallery-media.css">
   <link rel="stylesheet" href="style/catalog.css">
+  <link rel="stylesheet" href="style/catalog-media.css">
   <link rel="stylesheet" href="style/events.css">
+  <link rel="stylesheet" href="style/events-media.css">
   <link rel="stylesheet" href="style/editions.css">
+  <link rel="stylesheet" href="style/editions-media.css">
   <link rel="stylesheet" href="style/project.css">
+  <link rel="stylesheet" href="style/project-media.css">
   <link rel="stylesheet" href="style/contact.css">
+  <link rel="stylesheet" href="style/contact-media.css">
   <link rel="stylesheet" href="style/footer.css">
+  <link rel="stylesheet" href="style/footer-media.css">
   <link rel="stylesheet" href="style/modal.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
@@ -46,25 +56,50 @@
     </symbol>
   </svg>
 
-  <header class="header">  
+  <header class="header"> 
+    <div class="media-menu">
+      <div class="container media-container">
+        <nav class="media-nav">
+          <ul class="list-reset media-nav__list">
+            <li class="media-nav__item"><a href="#aboutus" class="media-nav__link">О&nbsp;нас</a></li>
+            <li class="media-nav__item"><a href="#gallery" class="media-nav__link">Галерея</a></li>
+            <li class="media-nav__item"><a href="#catalog" class="media-nav__link">Каталог</a></li>
+            <li class="media-nav__item"><a href="#events" class="media-nav__link">События</a></li>
+            <li class="media-nav__item"><a href="#editions" class="media-nav__link">Издания</a></li>
+            <li class="media-nav__item"><a href="#project" class="media-nav__link">Проекты</a></li>
+            <li class="media-nav__item"><a href="#contact" class="media-nav__link">Контакты</a></li>
+          </ul>
+        </nav>
+        <button class="btn media-menu__btn" type="button" tabindex="1">
+          <svg class="header-login__img">
+            <use xlink:href="#login" />
+          </svg>Войти</button>
+      </div>
+    </div>
+
     <div class="header-menu">
       <div class="container header-menu__container">
         <button type="button" class="btn header-burger header-burger-js burger" aria-label="Открыть меню">
-          <span class="header-burger-line"></span>
-          <span class="header-burger-line"></span>
-          <span class="header-burger-line"></span>
+          <span class="header-burger__line"></span>
+          <span class="header-burger__line"></span>
+          <span class="header-burger__line"></span>
         </button>
 
         <div class="logo">
           <a href="#" class="logo__link" aria-label="Сайт Blanchard. Художественная галерея">
             <picture class="logo__picture">
               <source class="logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
-              <source class="logo__img" media="(max-width: 1024px)" srcset="img/logoheader1024.svg">
+              <source class="logo__img" media="(max-width: 1300px)" srcset="img/logoheader1024.svg">
               <source class="logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
               <img class="logo__img" src="img/logoheader.svg" alt="логотип Blanchard">
             </picture>
           </a>
         </div>
+
+        <form class="media-search">
+          <input type="search" name="media-search" placeholder="Поиск" class="input-reset media-search__field">
+          <button type="button" aria-label="найти" class="btn media-search__submit"></button>
+        </form>
 
         <nav class="header-nav nav">
           <ul class="nav-list list-reset">
@@ -83,8 +118,6 @@
             <use xlink:href="#login" />
           </svg>Войти
         </button>
-
-        <div class="header-mediaserch"></div>
       </div>
     </div>
 
@@ -169,6 +202,7 @@
   </header>
 
   <main class="main">
+
     <section class="hero">
       <h1 class="visually-hidden">Blanchard - художественная галерея</h1>
       <div class="container hero-content">
@@ -185,7 +219,7 @@
       </div>
     </section>
 
-    <section class="gallery" id="gallery">
+     <section class="gallery" id="gallery">
       <div class="container gallery__container">
         <div class="gallery__content">
           <h2 class="title gallery__title">Галерея</h2>
@@ -202,7 +236,7 @@
           <p class="gallery-description">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a class="gallery-description__link">авторизуйтесь</a>, либо воспользуйтесь лицензией. </p>
         </div>
         
-        <div class="gallery-slider swiper swiper-container mySwiper">
+        <div class="gallery-slider swiper swiper-container gallery-slider__container">
           <div class="gallery-slider__nav">
             <div class="swiper-button-prev"></div>
 
@@ -254,9 +288,10 @@
             <span class="painter-year">2 июня 1448 — 11 января 1494.</span>
             <p class="painter-descr">Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов, в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того времени).</p>
           </div>
+
           <div class="catalog-accordion ">
             <ul class="accordion list-reset accordion-hronolist">
-              <li class="accordion-hronoitem ">
+              <li class="accordion-hronoitem">
                 <button type="button" class="btn accordion-hronoitem__btn" data-year="14">
                   <span class="accordion-hronoitem__head">C 1400 по 1499 гг.</span> <span class ="accordion-hronoitem__arrow"></span>
                 </button>
@@ -332,7 +367,12 @@
         <ul class="list-reset events-list">
           <li class="events-item">
             <article class="events-article">
-              <img src="/img/events1.jpg" alt="Книжная гравюра" class="events-article__img">
+              <picture class="events-article__picture">
+                <source srcset="/img/events1.jpg" media="(min-width:1301px)" class="events-article__img">
+                <source srcset="/img/events1-1024.jpg" media="(max-width:1300px)" class="events-article__img">
+                <img src="/img/events1.jpg" alt="Книжная гравюра" class="events-article__img">
+              </picture>
+              
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
                   <span class="events-content__place">Музей им. Щусева</span>
@@ -348,7 +388,11 @@
 
           <li class="events-item">
             <article class="events-article">
-              <img src="/img/events2.jpg" alt="Дмитрий Петров и Сергей Ильин" class="events-article__img">
+                <picture class="events-article__picture">
+                  <source srcset="/img/events2.jpg" media="(min-width:1301px)" class="events-article__img">
+                  <source srcset="/img/events2-1024.jpg" media="(max-width:1300px)" class="events-article__img">
+                  <img src="/img/events1.jpg" alt="Открытая дискуссия" class="events-article__img">
+                </picture>
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
                   <span class="events-content__place">ММОМА</span>
@@ -363,7 +407,11 @@
 
           <li class="events-item">
             <article class="events-article">
-              <img src="/img/events3.jpg" alt="Выставка «Формация 2020»" class="events-article__img">
+              <picture class="events-article__picture">
+                <source srcset="/img/events3.jpg" media="(min-width:1301px)" class="events-article__img">
+                <source srcset="/img/events3-1024.jpg" media="(max-width:1300px)" class="events-article__img">
+                <img src="/img/events1.jpg" alt="Выставка «Формация 2020»" class="events-article__img">
+              </picture>
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
                   <span class="events-content__place">Еврейский музей</span>
@@ -378,7 +426,11 @@
 
           <li class="events-item">
             <article class="events-article">
-              <img src="/img/events4.jpg" alt="Виды выставки" class="events-article__img">
+              <picture class="events-article__picture">
+                <source srcset="/img/events4.jpg" media="(min-width:1301px)" class="events-article__img">
+                <source srcset="/img/events4-1024.jpg" media="(max-width:1300px)" class="events-article__img">
+                <img src="/img/events1.jpg" alt="Виды выставки" class="events-article__img">
+              </picture>
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
                   <span class="events-content__place">Третьяковка на Крымском валу</span>
@@ -393,7 +445,11 @@
 
           <li class="events-item">
             <article class="events-article">
-              <img src="/img/events5.jpg" alt="Джон Винзор. Фотография." class="events-article__img">
+              <picture class="events-article__picture">
+                <source srcset="/img/events5.jpg" media="(min-width:1301px)" class="events-article__img">
+                <source srcset="/img/events5-1024.jpg" media="(max-width:1300px)" class="events-article__img">
+                <img src="/img/events1.jpg" alt="Джон Винзор. Фотография." class="events-article__img">
+              </picture>
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
                   <span class="events-content__place">ММАМ</span>
@@ -410,11 +466,11 @@
       </div>
     </section>
 
-    <section class="editions" id="editions">
+   <section class="editions" id="editions">
       <div class="container editions-container">
         <div class="editions-filter">
           <h2 class="title editions-title">Издания</h2>
-          <div class="editions-checkbox">
+          <form class="editions-checkbox">
             <h3 class="editions-subtitle checkbox-title">Категории</h3>
             <ul class="list-reset editions-checkbox__list checkbox-list">
               <li class="checkbox-item">
@@ -514,15 +570,15 @@
               </li>
             </ul>
             <h3 class="editions-subtitle">Цена</h3>
-            <form class="editions-price">
+            <div class="editions-price">
               От <input class="editions-price__input min-price" type="text" value="50">
               до <input class="editions-price__input max-price" type="text" value="25 000">
               руб.
-            </form>
-          </div>
+            </div>
+          </form>
         </div>
 
-        <div class="editions-slider swiper swiper-editions__container editionsSwiper">
+        <div class="editions-slider swiper-slider swiper-editions__container editionsSwiper">
           <div class="editions-slider__nav">
             <div class="swiperEd-button-prev"></div>
 
@@ -538,76 +594,112 @@
       </div>
     </section>
 
-    <section class="project">
+     <section class="project" id="project">
       <div class="container project-container">
         <h2 class="title project-title">Проекты</h2>
         <p class="project-text">
-          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&#8209;пропагандистское <button id="tooltip--one" class="btn project-tooltip" type="button"></button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button id="tooltip--two" class="btn project-tooltip" type="button"></button> исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых <button id="tooltip--three" class="btn project-tooltip" type="button"></button> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" class="project-text__link">blanchard-art.ru/projects/about</a>
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&#8209;пропагандистское <button id="tooltip--one" class="btn project-tooltip" type="button"></button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button id="tooltip--two" class="btn project-tooltip" type="button"></button> исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых <button id="tooltip--three" class="btn project-tooltip" type="button"></button> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с не уникальными данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" class="project-text__link">blanchard-art.ru/projects/about</a>
         </p>
 
         <h3 class="project-subtitle">Партнёры проектов:</h3>
-        <div class="project-container">
-          <div class="project-slider__navigation"> 
-            <div class="swiperPr-button-prev"></div> 
-            <div class="swiperPr-button-next"></div>          
-          </div>
-        <div class="project-slider swiper-container">
-          
-
-          <div class="swiper-wrapper swiper-project__wrapper">
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner1.png" alt="Freelands Foundation">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner2.png" alt="Institute for ContemporaryArt">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner3.png" alt="Workhouse">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner4.png" alt="1849">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner5.png" alt="hiscox">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner6.png" alt="stassen">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner7.png" alt="watts gallery artists village">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner8.png" alt="camden">
-              </a>
-            </div>
-            <div class="swiper-slide project-partners">
-              <a href="#" class="project-partners__link">
-                <img class="project-partners__img" src="img/partner9.png" alt="esad">
-              </a>
-            </div>
+        <div class="project-swiper">
+          <div class="swiperPr-button-prev"></div>
+               
+          <div class="swiper-container project-swiper__container">
             
-          </div>
-        </div>          
+            <div class="swiper-wrapper project-swiper__wrapper">
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner1.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner1-1024.png">
+                    <img class="project-partners__img" src="img/partner1.png" alt="Freelands Foundation">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner2.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner2-1024.png">
+                    <img class="project-partners__img" src="img/partner2.png" alt="Institute for ContemporaryArt">
+                  </picture>
+                  
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner3.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner3-1024.png">
+                    <img class="project-partners__img" src="img/partner3.png" alt="Workhouse">
+                  </picture>            
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner4.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner4-1024.png">
+                    <img class="project-partners__img" src="img/partner4.png" alt="1849">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner5.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner5-1024.png">
+                    <img class="project-partners__img" src="img/partner5.png" alt="hiscox">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner6.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner6-1024.png">
+                    <img class="project-partners__img" src="img/partner6.png" alt="stassen">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner7.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner7-1024.png">
+                    <img class="project-partners__img" src="img/partner7.png" alt="watts gallery artists village">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner8.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner8-1024.png">
+                    <img class="project-partners__img" src="img/partner8.png" alt="camden">
+                  </picture>
+                </a>
+              </div>
+              <div class="project-partners">
+                <a href="#" class="project-partners__link">
+                  <picture>
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner9.png">
+                    <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner9-1024.png">
+                    <img class="project-partners__img" src="img/partner9.png" alt="esad">
+                  </picture>
+                </a>
+              </div>
+              
+            </div>
+          </div> 
+        
+        <div class="swiperPr-button-next"></div> 
       </div>
     </div>
     </section>
 
-    <section class="contact">
+    <section class="contact" id="contact">
       <div class="container">
         <h2 class="title contact-title">Контакты</h2>
       </div>
@@ -620,8 +712,14 @@
                 <p class="contact-content__adress">Леонтьевский переулок, дом 5/1</p>
                 <h3 class="contact-content__call">Заказать обратный звонок</h3>
                 <form action="https://jsonplaceholder.typicode.com/posts" method="POST" class="contact-form">
-                  <input name="name" type="text" class="contact-form__input" placeholder="Имя*" data-validate-field="name">
-                  <input name="tel" type="tel" class="contact-form__input" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone">
+                  <label class="contact-form__label">
+                    <input name="name" type="text" class="contact-form__input" placeholder="Имя*" data-validate-field="name">
+                  </label>
+                  
+                  <label class="contact-form__label">
+                    <input name="tel" type="tel" class="contact-form__input" placeholder="Телефон*" data-validate-field="tel" data-validate-rules="phone">
+                  </label>
+                  
                   <button type="submit" class="btn contact-form__btn">Заказать</button>
                 </form>
 
@@ -664,14 +762,14 @@
       <ul class="list-reset social-list">
         <li class="social-item">
           <a href="#" class="social-item__link vk" aria-label="мы Вконтакте">
-            <svg width="45" height="45" viewBox="0 0 45 45" fill="#CACACA">
+            <svg viewBox="0 0 45 45" fill="#CACACA">
               <path d="M22.5 0C10.074 0 0 10.0736 0 22.5C0 34.9264 10.074 45 22.5 45C34.926 45 45 34.9264 45 22.5C45 10.0736 34.926 0 22.5 0ZM33.9132 24.9335C34.9619 25.9577 36.0714 26.9217 37.0128 28.0519C37.4299 28.5519 37.823 29.0688 38.1222 29.6503C38.5495 30.4794 38.1637 31.3886 37.4216 31.4379L32.812 31.4369C31.6215 31.5354 30.6741 31.0553 29.8754 30.2414C29.2378 29.5927 28.6462 28.8999 28.0321 28.2292C27.7812 27.9539 27.517 27.6947 27.2021 27.4907C26.5737 27.0819 26.0277 27.2072 25.6677 27.8636C25.3008 28.5316 25.217 29.2719 25.182 30.0153C25.1319 31.1022 24.8041 31.3863 23.7135 31.4374C21.3832 31.5465 19.1721 31.1929 17.117 30.0181C15.3041 28.9818 13.901 27.5193 12.6783 25.8634C10.2973 22.6353 8.47381 19.0924 6.8354 15.4478C6.46665 14.627 6.73642 14.1878 7.64194 14.1707C9.14639 14.1417 10.6508 14.1454 12.1553 14.1694C12.7676 14.179 13.1727 14.5294 13.4079 15.1071C14.2209 17.1074 15.2176 19.0105 16.4665 20.7755C16.7994 21.2455 17.1391 21.7142 17.623 22.0461C18.157 22.4125 18.5639 22.2915 18.8158 21.6953C18.9769 21.3164 19.0464 20.9113 19.0814 20.5053C19.2011 19.1145 19.2153 17.7242 19.0082 16.339C18.8793 15.4722 18.3918 14.9124 17.5277 14.7485C17.0876 14.6652 17.152 14.5022 17.3661 14.2508C17.7376 13.8163 18.0856 13.5474 18.7812 13.5474L23.9893 13.5465C24.8101 13.7076 24.9942 14.0759 25.1056 14.9027L25.1102 20.6903C25.1006 21.0103 25.2709 21.9586 25.8454 22.1681C26.3058 22.32 26.6096 21.9508 26.8849 21.6594C28.1339 20.334 29.0237 18.7697 29.8206 17.1506C30.1723 16.4366 30.4757 15.6977 30.7703 14.9575C30.9895 14.4101 31.3301 14.1408 31.9479 14.15L36.9631 14.156C37.1108 14.156 37.2609 14.1574 37.4073 14.1827C38.2525 14.3273 38.4841 14.6909 38.2226 15.5154C37.811 16.8109 37.0114 17.89 36.2297 18.9718C35.3919 20.1301 34.4983 21.2478 33.6687 22.4112C32.9064 23.4746 32.9667 24.01 33.9132 24.9335Z" fill="#CACACA"/>
             </svg>
           </a>
         </li>
         <li class="social-item">
           <a href="#" class="social-item__link instagram" aria-label="мы в инстаграм">
-            <svg width="45" height="45" viewBox="0 0 45 45" fill="#CACACA">
+            <svg viewBox="0 0 45 45" fill="#CACACA">
               <path d="M18.1172 22.5C18.1172 24.8785 20.0453 26.8066 22.4238 26.8066C24.8024 26.8066 26.7305 24.8785 26.7305 22.5C26.7305 20.1215 24.8024 18.1934 22.4238 18.1934C20.0453 18.1934 18.1172 20.1215 18.1172 22.5Z" fill="#CACACA"/>
               <path d="M12.3521 14.8803C12.5591 14.3194 12.8894 13.8116 13.3185 13.3948C13.7353 12.9656 14.2428 12.6354 14.8041 12.4283C15.2593 12.2515 15.9432 12.0411 17.2029 11.9837C18.5655 11.9216 18.9741 11.9082 22.4238 11.9082C25.8738 11.9082 26.2824 11.9212 27.6447 11.9834C28.9044 12.0411 29.5886 12.2515 30.0435 12.4283C30.6048 12.6354 31.1126 12.9656 31.5291 13.3948C31.9582 13.8116 32.2885 14.319 32.4959 14.8803C32.6727 15.3356 32.8831 16.0198 32.9405 17.2795C33.0026 18.6418 33.016 19.0503 33.016 22.5004C33.016 25.9501 33.0026 26.3587 32.9405 27.7213C32.8831 28.981 32.6727 29.6649 32.4959 30.1201C32.2885 30.6814 31.9586 31.1889 31.5294 31.6057C31.1126 32.0348 30.6052 32.3651 30.0438 32.5721C29.5886 32.7493 28.9044 32.9597 27.6447 33.0171C26.2824 33.0792 25.8742 33.0922 22.4241 33.0922C18.9737 33.0922 18.5652 33.0792 17.2032 33.0171C15.9436 32.9597 15.2593 32.7493 14.8041 32.5721C13.6773 32.1375 12.7867 31.2469 12.3521 30.1201C12.1753 29.6649 11.9648 28.981 11.9071 27.7213C11.845 26.3587 11.8319 25.9501 11.8319 22.5004C11.8319 19.0503 11.845 18.6418 11.9071 17.2795C11.9645 16.0198 12.1749 15.3356 12.3521 14.8803V14.8803ZM22.4238 29.1344C26.0881 29.1344 29.0585 26.1643 29.0585 22.5001C29.0585 18.8358 26.0881 15.8657 22.4238 15.8657C18.7599 15.8657 15.7894 18.8358 15.7894 22.5001C15.7894 26.1643 18.7599 29.1344 22.4238 29.1344ZM15.5271 17.1538C16.3834 17.1538 17.0776 16.4596 17.0776 15.6034C17.0776 14.7471 16.3834 14.0529 15.5271 14.0529C14.6709 14.0529 13.9767 14.7471 13.9767 15.6034C13.977 16.4596 14.6709 17.1538 15.5271 17.1538Z" fill="#CACACA"/>
               <path d="M22.6204 0C34.9364 0 44.9238 9.98747 44.9238 22.3034C44.9238 34.6194 34.9364 44.6069 22.6204 44.6069C10.3044 44.6069 0.316958 34.6194 0.316958 22.3034C0.316958 9.98747 10.3044 0 22.6204 0ZM9.8906 27.5836C9.95253 28.9469 10.1693 29.8777 10.4858 30.6924C11.1512 32.4127 12.5111 33.7727 14.2314 34.438C15.0458 34.7545 15.9769 34.971 17.3399 35.0332C18.7057 35.0955 19.1419 35.1105 22.6201 35.1105C26.0985 35.1105 26.5345 35.0955 27.9005 35.0332C29.2635 34.971 30.1946 34.7545 31.009 34.438C31.8639 34.1164 32.6378 33.6124 33.2776 32.9607C33.929 32.3212 34.433 31.547 34.7546 30.6924C35.0711 29.878 35.2879 28.9469 35.3498 27.5839C35.4128 26.2178 35.4274 25.7815 35.4274 22.3034C35.4274 18.8253 35.4128 18.389 35.3502 17.0233C35.2883 15.66 35.0718 14.7292 34.7553 13.9145C34.4337 13.0599 33.9293 12.2857 33.2776 11.6462C32.6382 10.9945 31.8639 10.4905 31.0094 10.1689C30.1946 9.85236 29.2638 9.63592 27.9005 9.57364C26.5348 9.51136 26.0985 9.49638 22.6204 9.49638C19.1423 9.49638 18.706 9.51136 17.3403 9.57398C15.9769 9.63592 15.0462 9.85236 14.2314 10.1685C13.3769 10.4901 12.6026 10.9945 11.9628 11.6462C11.3114 12.286 10.8071 13.0599 10.4858 13.9145C10.169 14.7292 9.95253 15.66 9.89026 17.0233C9.82798 18.389 9.81334 18.8253 9.81334 22.3034C9.81334 25.7815 9.82798 26.2178 9.8906 27.5836Z" fill="#CACACA"/>
@@ -680,7 +778,7 @@
         </li>
         <li class="social-item">
           <a href="#" class="social-item__link facebook" aria-label="мы в фэйсбук">
-            <svg width="45" height="45" viewBox="0 0 45 45" fill="#CACACA">
+            <svg viewBox="0 0 45 45" fill="#CACACA">
               <path d="M22.5 0C10.125 0 0 10.1431 0 22.6355C0 33.9307 8.23499 43.3057 18.99 45V29.1867H13.275V22.6355H18.99V17.6431C18.99 11.9729 22.3425 8.85542 27.495 8.85542C29.9475 8.85542 32.5125 9.28464 32.5125 9.28464V14.8645H29.6775C26.8875 14.8645 26.01 16.6039 26.01 18.3886V22.6355H32.265L31.2525 29.1867H26.01V45C31.312 44.1593 36.1399 41.4432 39.6223 37.342C43.1047 33.2408 45.012 28.0248 44.9999 22.6355C44.9999 10.1431 34.875 0 22.5 0Z" fill="#CACACA"/>
             </svg>
           </a>

@@ -7,11 +7,9 @@
 }
 
 .contact-wrap {
-  position: relative;
+  border: 1px solid var(--dustygray-color);
   display: flex;
-  justify-content: start;
   overflow: hidden;
-  border-top: 1px solid var(--dustygray-color);
 }
 
 .contact-content {
@@ -20,15 +18,20 @@
 
 .contact-content__container {
   max-width: 1620px;
+  margin: 0px auto;
   padding: 0 10px;
-  margin: 0 auto;
-  /*  */
+  display: flex;
+  align-items: center;
 }
 
 .contact-content__body {
-  width: 30%;
+  position: relative;
+  z-index: 50;
+  width: 32.5%;
   padding-top: 125px;
   padding-bottom: 120px;
+  background-color: white;
+  border-right: 1px solid var(--dustygray-color);
 }
 
 .contact-content__title {
@@ -58,8 +61,27 @@
   margin-bottom: 40px;
 }
 
+.contact-form__label {
+  position: relative;
+  max-width: 21vw;
+}
+
+.js-validate-error-label {
+  position: absolute;
+  top: -22%;
+  left: 20px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #D11616 !important;
+}
+
+.js-validate-error-field {
+  border: 1px solid #D11616 !important;
+}
+
 .contact-form__input {
-  max-width: 400px;
+  width: 100%;
   padding: 4px 10px 4px 25px;
   margin-bottom: 21px;
   border-radius: 100px;
@@ -173,12 +195,23 @@
   background-image: url(../img/Telegram_2019_Logo.svg);
 }
 
+
 .contact-map {
+  position: relative;
+  flex: 0 0 calc(((107vw - 20px) * 0.675) + 10px);
+  /* padding: 0 0 40%; */
+  transform: translate(-100%, 0px);
+}
+
+
+
+.ymaps-2-1-79-inner-panes {
   position: absolute;
-  right: 0;
+  width: 100%;
+  height: 100%;
   top: 0;
-  width: 64.5%;
-  height: 700px;
+  left: 0;
+  object-fit: cover;
 }
 
 [class*="ground-pane"] {

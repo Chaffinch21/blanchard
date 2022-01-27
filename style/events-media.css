@@ -1,0 +1,26 @@
+@media (max-width:1300px) {
+  .events {
+    margin-bottom: 78px;
+  }
+
+  .events-title {
+    margin-bottom: 13px;
+  }
+
+  .events-article {
+    min-height: 680px;
+  }
+
+  .events-article__content {
+    padding: 17px 17px 30px 30px;
+  }
+
+  .events-content__text {
+    margin-bottom: 0px;
+  }
+
+  .events-article__link {
+    bottom: 43px;
+    left: 30px;
+  }
+}

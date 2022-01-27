@@ -1,0 +1,33 @@
+
+@media(max-width: 1540px) {
+  .project {
+    margin-bottom: 78px;
+  }
+
+  .project-text {
+    width: 100%;
+    margin-bottom: 23px;
+  }
+
+.project-swiper__container {
+  max-width: 818px;
+  }
+
+  .project-partners {
+    box-sizing: border-box;
+    min-width: 384px;
+    
+  }
+
+  .project-partners__link {
+    height: 128px;
+  }
+
+  .swiperPr-button-prev {
+    top: 50px;
+  }
+
+  .swiperPr-button-next {
+    top: 50px;
+  }
+}

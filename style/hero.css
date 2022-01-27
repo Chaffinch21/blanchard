@@ -1,5 +1,7 @@
 .hero {
+  position: relative;
   width: 100%;
+  /* outline: 1px solid red; */
 }
 
 .swiper-container {
@@ -9,10 +11,14 @@
 .hero-content {
   position: relative;
   z-index: 20;
-  padding-top: 241px;
-  padding-bottom: 122px;
+  padding-top: 12.5vw;
+  padding-bottom: 6.45vw;
   padding-left: 10px;
   display: block;
+}
+
+.media-menu {
+  display: none;
 }
 
 .hero-content__title {
@@ -29,7 +35,7 @@
   display: block;
   width: 35%;
   margin: 0;
-  margin-bottom: 92px;
+  margin-bottom: 4.7vw;
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
@@ -38,6 +44,7 @@
 
 .hero-content__btn {
   position: relative;
+  display: block;
   padding: 22px 35px;
   background-color: var(--fialca-color);
   border-radius: 100px;
@@ -88,37 +95,37 @@
 @keyframes scaleImg {
   0% {
       background: url("../img/slide1.jpg") no-repeat;
-      background-size: 110%;
+      background-size: 170%;
       background-position: 50% 50%}
 
-  16% {background-size: 150%;
+  16% {background-size: 190%;
       background-position: 30% 50%;}
 
   32% {
     background: url("../img/slide2.jpg") no-repeat;
-    background-size: 110%;
+    background-size: 170%;
     background-position: 50% 50%;
   }
-  48% {background-size: 120%;
+  48% {background-size: 180%;
     background-position: 20% 70%;}
 
   64% {
     background: url("../img/slide3.jpg") no-repeat;
-    background-size: 110%;
+    background-size: 170%;
     background-position: 50% 50%;
   }
 
-  80% {background-size: 140%;
+  80% {background-size: 200%;
     background-position: 70% 10%;}
 
   100% {
     background: url("../img/slide1.jpg") no-repeat;
-      background-size: 110%;
+      background-size: 170%;
       background-position: 50% 50%
   }
 }
 
 .hero {
   background: url("../img/slide1.jpg") no-repeat;
-  animation: 20s scaleImg  ease infinite;  
+  /* animation: 20s scaleImg  ease infinite;   */
 }
