@@ -1,3 +1,9 @@
+@media (min-width: 1950px) {
+  .editions-filter {
+    margin-right: 3vw;
+  }
+}
+
 @media (max-width: 1600px) {
   .editions-container {
     padding: 85px 10px 78px;

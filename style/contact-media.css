@@ -1,11 +1,23 @@
+@media (min-width: 2000px) {
+  .contact-content__body {
+    border-right: none;
+  }
+}
+
 @media (max-width:1300px) {
-  .contact-content__container {
-    max-width: 945px;
+  .contact-form__label {
+    max-width: 38vw;
   }
 
   .contact-content__body {
     width: 47%;
     padding-bottom: 100px;
+  }
+}
+
+@media (max-width:1024px) {
+  .contact-content__container {
+    max-width: 945px;
   }
 
   .contact-form__label {

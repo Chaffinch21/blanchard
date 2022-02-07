@@ -1,3 +1,16 @@
+@media (min-width: 2500px) {
+  .logo {
+    margin-right: 5vw;
+  }
+
+  .nav-item:not(:last-child) {
+    margin-right: 1.6vw;
+  }
+
+  .submenu-item:not(:last-child) {
+    margin-right: 2.3vw;
+  }
+}
 
 @media (max-width: 1300px) {
   .header {

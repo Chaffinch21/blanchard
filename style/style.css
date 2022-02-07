@@ -3,12 +3,12 @@
   --text-color: #333333;
   --white-text: #ffffff;
   --grey-text: #969696;
-  --silver-color: #CACACA;
-  --body-background : #FFFFFF;
-  --focus-color: #7943A4;
-  --hover-color: #C283F3;
-  --fialca-color: #9D5CD0;
-  --biloba-color: #D1A9F0;
+  --silver-color: #cacaca;
+  --body-background : #ffffff;
+  --focus-color: #7943a4;
+  --hover-color: #c283f3;
+  --fialca-color: #9d5cd0;
+  --biloba-color: #d1a9f0;
   --dustygray-color: #999999;
 }
 
@@ -82,7 +82,7 @@ svg path {
   padding: 0 10px;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1024px) {
   .container {
     max-width: 945px;
   }

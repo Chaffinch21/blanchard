@@ -1,5 +1,6 @@
 .editions {
-  background: url('../img/izd-fon.jpg');
+  background: url('../img/izd-fon.jpg') no-repeat center;
+  background-size: cover;
   color: var(--white-text);
   margin-bottom: 80px;
 }

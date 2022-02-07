@@ -264,6 +264,33 @@
   transition: display .3s ease-in-out;
 }
 
+.simplebar-track.simplebar-vertical {
+  top: 40px;
+  z-index: 2;
+  bottom: 40px;
+  right: 19px;
+  width: 2px;
+  background: #000;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: '';
+  background:#ffffff;
+  border-radius: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 50;
+  opacity: 1;
+  /* transition: opacity 1s linear; */
+}
+
+ .simplebar-scrollbar.simplebar-visible:before {
+   /* When hovered, remove all transitions from drag handle */
+   opacity: 1;
+  /* transition: opacity 0s linear; */
+} 
+
 .hidemenu-item {
   background-size: cover;
   width: 220px;
@@ -389,33 +416,6 @@
 .hidemenu-item--balla {
   background-image: url('../img/balla.jpg'); 
 }
-
-.simplebar-track.simplebar-vertical {
-  top: 40px;
-  z-index: 2;
-  bottom: 40px;
-  right: 19px;
-  width: 2px;
-  background: #000;
-}
-
-.simplebar-scrollbar:before {
-  position: absolute;
-  content: '';
-  background:#ffffff;
-  border-radius: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: 50;
-  opacity: 1;
-  /* transition: opacity 1s linear; */
-}
-
- .simplebar-scrollbar.simplebar-visible:before {
-   /* When hovered, remove all transitions from drag handle */
-   opacity: 1;
-  /* transition: opacity 0s linear; */
-} 
 
 .header-search {
   display: flex;

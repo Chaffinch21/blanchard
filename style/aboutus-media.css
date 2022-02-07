@@ -1,5 +1,11 @@
 @media (max-width: 1300px) {
   .aboutus__text {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutus__text {
     max-width: 100%;
   }
 }
