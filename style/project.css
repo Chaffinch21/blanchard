@@ -132,6 +132,10 @@ div[data-tippy-root] {
   overflow: hidden;
 }
 
+.project-swiper__wrapper {
+  
+}
+
 .project-partners {
   box-sizing: border-box;
   min-width: 450px;

@@ -15,5 +15,90 @@
     max-width: 280px;
     max-height: 280px;
   }
-   
+}
+
+@media (max-width: 960px) {
+  .gallery__container {
+    position: relative;
+    height: auto;
+    flex-direction: column;
+    justify-content: start;
+    padding: 80px 10px 115px;
+  }
+
+  .gallery__content {
+   margin-bottom: 30px; 
+  }
+
+  .choices__list--dropdown {
+    z-index: 500;
+  }
+
+  .gallery-description {
+    position: absolute;
+    bottom: 70px;
+  }
+
+  .gallery-slider__container {
+    height: 725px;
+  }
+
+  .gallery-slide {
+    max-width: 317px;
+    max-height: 280px;
+  }
+}
+
+@media (max-width: 700px) {
+.gallery {
+  width: 100%;
+  margin-bottom: 50px;
+}
+  .gallery__container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 188px;
+  }
+
+  .gallery__content {
+    width: 100%; 
+   }
+
+  .gallery__title {
+    margin-bottom: 13px;
+  }
+
+  .gallery-select__subtitle {
+    margin-bottom: 3px;
+  }
+
+  .gallery-slider__container {
+    height: 460px;
+    padding-left: 0;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .swiper-gallery__wrapper {
+    order: 1;
+  }
+  
+
+  .gallery-slider__nav {
+    order: 2;
+    justify-content: center;
+    z-index: 200;
+  }
+
+  .gallery-slide {
+    max-width: 290px;
+    max-height: 367px;
+  }
+
+  .gallery-description {
+    position: absolute;
+    width: 90%;
+    bottom: 40px;
+  }
 }

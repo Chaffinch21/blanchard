@@ -28,6 +28,9 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
+  text-align: left;
+  color: #ffffff;
+  cursor: auto;
 }
 
 .checkbox-list {
@@ -48,7 +51,7 @@
 }
 
 .check__input {
-  position: absolute;
+  position: relative;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -56,6 +59,7 @@
 
 .check__box {
   position: absolute;
+ 
   margin-left: -25px;
   margin-top: 3px;
   width: 12px;
@@ -108,6 +112,10 @@
 
 .check__input:checked ~ .check__text {
   color: var(--hover-color);
+}
+
+.check__delete {
+  display: none;
 }
 
 .editions-price {
@@ -239,11 +247,18 @@
 
 .editions-card__title {
   margin: 0;
+  max-height: 22px;
+  overflow: hidden;
 }
 
 .editions-card__autor {
   display: block;
   margin-bottom: 19px;
+}
+
+.editions-card__price {
+  min-width: 80px;
+  text-align: right;
 }
 
 .editions-card__btn {

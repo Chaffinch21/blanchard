@@ -16,6 +16,7 @@ const eventsBtn = document.querySelector('.events-btn');
 const eventsList = document.querySelector('.events-list');
 const catalogPainter = document.querySelector('.catalog-painter');
 const editionsSlider = document.querySelector('.swiper-editions__wrapper');
+const editionsAccordionBtn = document.querySelector('.editions-subtitle');
 const editionsPagination = document.querySelector('.swiperEd-pagination');
 const editionsNav = document.querySelector('.editions-slider__nav');
 const editionsCheck = document.querySelectorAll('.check__input');
@@ -23,6 +24,11 @@ const burgerBtn = document.querySelector('.header-burger-js');
 const mediaMenu = document.querySelector('.media-menu');
 const mediaMenuBtn = document.querySelector('.media-menu__btn');
 const mediaMenuLink = document.querySelectorAll('.media-nav__link');
+const mediaSerch = document.querySelector('.media-search__submit');
+const mediaSerchClose = document.querySelector('.media-search__close');
+const mediaField = document.querySelector('.media-search__field');
+const logo = document.querySelector('.logo');
+
 
 //бургер-меню
 burgerBtn.addEventListener('click', function(ev){
@@ -45,6 +51,31 @@ mediaMenuLink.forEach(el=>{
   el.addEventListener('click', function(){
     document.querySelector('.body').classList.remove('burger-open');
   })
+})
+
+
+//поиск
+mediaSerch.addEventListener('click', function(){
+ 
+    logo.classList.add('hidden');
+    burgerBtn.classList.add('hidden');
+    mediaField.classList.add('open');
+    mediaSerchClose.style.display = 'block';
+  if (document.documentElement.clientWidth<701){
+    document.querySelector('.header-menu__container').style.height = '75px';
+    document.querySelector('.media-search').style.marginBottom = '-15px';
+  }
+})
+
+mediaSerchClose.addEventListener('click', function(){
+  setTimeout(function(){logo.classList.remove('hidden')}, 500);
+  setTimeout(function(){burgerBtn.classList.remove('hidden')}, 500);
+    mediaField.classList.remove('open');
+    mediaSerchClose.style.display = 'none';
+    if (document.documentElement.clientWidth<701){
+      document.querySelector('.header-menu__container').style.height = '45px';
+      document.querySelector('.media-search').style.marginBottom = '0px';
+    }
 })
 
 
@@ -93,9 +124,22 @@ let swiperGallery = new Swiper(".gallery-slider", {
     prevEl: '.swiper-button-prev',
   },
   breakpoints:{
-    667:{
+    320:{
+      slidesPerView: 1,
+      slidesPerColumn: 1,
+      slidesPerGroup: 1,
+      spaceBetween: 90
+    },
+    500:{
+      slidesPerView: 2,
+      slidesPerColumn: 1,
+      slidesPerGroup: 2,
+      spaceBetween: 20,
+    },
+    700:{
       slidesPerView: 2,
       slidesPerColumn: 2,
+      slidesPerGroup: 2,
       spaceBetween: 34,
     },
 
@@ -130,12 +174,34 @@ const loadGallery = (art) => {
       let count = 0;
       for (item of data) {
         
-        if (item.art == art) {
+        if ((item.art == art) && (document.documentElement.clientWidth>960)) {
           count += 1;
           catalogList.innerHTML += `
             <div class="swiper-slide gallery-slide">
               <button class="btn gallery-slide__btn gallery-btn__js" data-id="${item.id}" type="button">
                 <img class="gallery-slide__img" src="${item.cover}" alt="${item.title}">
+              </button>
+            </div>
+          `;
+        }
+
+        if ((item.art == art) && (document.documentElement.clientWidth<=960) && (document.documentElement.clientWidth>700)) {
+          count += 1;
+          catalogList.innerHTML += `
+            <div class="swiper-slide gallery-slide">
+              <button class="btn gallery-slide__btn gallery-btn__js" data-id="${item.id}" type="button">
+                <img class="gallery-slide__img" src="${item.medium}" alt="${item.title}">
+              </button>
+            </div>
+          `;
+        }
+
+        if ((item.art == art) && (document.documentElement.clientWidth<=700)) {
+          count += 1;
+          catalogList.innerHTML += `
+            <div class="swiper-slide gallery-slide">
+              <button class="btn gallery-slide__btn gallery-btn__js" data-id="${item.id}" type="button">
+                <img class="gallery-slide__img" src="${item.mobil}" alt="${item.title}">
               </button>
             </div>
           `;
@@ -160,8 +226,10 @@ const loadGallery = (art) => {
               if (item.id == id) {
         
                 galleryModalBlock.innerHTML = `
-                <img src="${item.big}" alt="${item.title}" class="modal-gallery__img">
-                <div class="modal-gallery__descr modal-descr">
+                <div class="modal-gallery__image">
+                  <img src="${item.big}" alt="${item.title}" class="modal-gallery__img">
+                </div>
+                  <div class="modal-gallery__descr modal-descr">
                   <h3 class="modal-descr__autor">${item.author}</h3>
                   <h4 class="modal-descr__title">${item.title}</h4>
                   <span class="modal-descr__year">${item.year}</span>
@@ -192,6 +260,17 @@ const loadGallery = (art) => {
 };
 
 loadGallery('painting');
+
+
+  window.addEventListener('resize', function(){
+    const art = catalogBtns.currentTarget.value;
+    loadGallery(art);
+  
+  });
+
+
+
+
 
 
 catalogBtns.addEventListener('change', (e) => {
@@ -367,36 +446,109 @@ catalogBtns.addEventListener('change', (e) => {
     }
   })
 
-  //editions
+  //event
 
-  let swiperEditions = new Swiper('.editions-slider', {
-    loop: false,
-    // spaceBetween: 50,
-    pagination: {
-      el: '.swiperEd-pagination',
-      type: 'fraction'
-    },
-    navigation: {
-      nextEl: '.swiperEd-button-next',
-      prevEl: '.swiperEd-button-prev',
-      disabledClass: 'swiperEd-button-disabled'
-    },
-    breakpoints:{
-      1024:{
-        slidesPerView: 2,
+  const eventsSlider = document.querySelector('.events-swiper__container');
+
+  let swiperEvent;
+
+  const mobileEventsSlider = () => {
+    if (window.innerWidth <= 600 && eventsSlider.dataset.mobile == 'false') {
+      document.querySelector('.events-swiper__container').classList.add('swiper-container');
+      document.querySelector('.events-list').classList.add('swiper-wrapper');
+      document.querySelectorAll('.events-item').forEach(el => {
+        el.classList.add('swiper-slide')
+      })
+      swiperEvent = new Swiper(eventsSlider, {
+        slidesPerView: 1,
         slidesPerGroup: 1,
-        spaceBetween: 60,
-      },
-  
-      1300:{
-        spaceBetween: 50,
-        slidesPerView: 3,
-        slidesPerGroup: 1,
+        spaceBetween: 10,
+        loop: false,
+        // slideClass: ('events-item'),
+
+        pagination: {
+          el: '.swiperEv-pagination',
+          clickable: true
+        },
+      });
+
+      eventsSlider.dataset.mobile = 'true';
+    }
+
+    if (window.innerWidth > 601) {
+      eventsSlider.dataset.mobile = 'false';
+
+        if (eventsSlider.classList.contains('swiper-container-initialized')) {
+          swiperEvent.destroy();
         }
     }
+  }
+
+  mobileEventsSlider();
+
+  window.addEventListener('resize', () => {
+    mobileEventsSlider();
   });
 
- 
+
+  //editions
+
+  const editionSlider = document.querySelector('.editions-slider');
+
+  let swiperEditions;
+
+  const bigEditionsSlider = () => {
+    if (window.innerWidth > 700 && editionSlider.dataset.big == 'true') {
+      swiperEditions = new Swiper(editionSlider, {
+        loop: false,
+    
+        pagination: {
+          el: '.swiperEd-pagination',
+          type: 'fraction'
+        },
+        navigation: {
+          nextEl: '.swiperEd-button-next',
+          prevEl: '.swiperEd-button-prev',
+          disabledClass: 'swiperEd-button-disabled'
+        },
+        breakpoints:{
+          600:{
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 38,
+          },
+          900:{
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 50,
+          },
+      
+          1300:{
+            spaceBetween: 50,
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            }
+        }
+      });
+
+      editionSlider.dataset.big = 'false';
+    }
+
+    if (window.innerWidth < 701) {
+      editionSlider.dataset.big = 'true';
+
+        if (editionSlider.classList.contains('swiper-container-initialized')) {
+          swiperEditions.destroy();
+        }
+    }
+  }
+
+  bigEditionsSlider();
+
+  window.addEventListener('resize', () => {
+    bigEditionsSlider();
+  });
+
 
   const loadEditions = (checkArr) => {
     editionsPagination.innerHTML = '';
@@ -409,7 +561,6 @@ catalogBtns.addEventListener('change', (e) => {
         let count = 0;
         for (item of data) {
           let categoryArr = item.category;
-          console.log(checkArr);
           if (checkArr.length == 0) {
 
             editionsSlider.innerHTML='';
@@ -438,26 +589,29 @@ catalogBtns.addEventListener('change', (e) => {
           if (count>3){
             editionsNav.classList.add('visible');} 
           else {editionsNav.classList.remove('visible')};
-
-          swiperEditions.update();
+          
+          if (window.innerWidth > 700){
+            swiperEditions.update();
+          }
+          
         }
       
-          let checkArray = new Array();
-          editionsCheck.forEach(check => {  
-            check.addEventListener('change', function(e){
-              e.target.classList.toggle('checked');
+      //     let checkArray = new Array();
+      //     editionsCheck.forEach(check => {  
+      //       check.addEventListener('change', function(e){
+      //         e.target.classList.toggle('checked');
               
-                if (e.target.checked){
-                  checkArray.push(e.target.value);
-                } else {
+      //           if (e.target.checked){
+      //             checkArray.push(e.target.value);
+      //           } else {
                   
-                  let i = checkArray.indexOf(check.value, 0);
-                  checkArray.splice(i,1);
-                }
+      //             let i = checkArray.indexOf(check.value, 0);
+      //             checkArray.splice(i,1);
+      //           }
                     
-              loadEditions(checkArray);
-            });
-      });
+      //         loadEditions(checkArray);
+      //       });
+      // });
     })
   }   
   
@@ -475,6 +629,65 @@ catalogBtns.addEventListener('change', (e) => {
       })
     }
   ) 
+
+
+  const editionsAccordion = document.querySelector('.accordion-editions');
+
+  const mobileEditionsAccordion = () => {
+    if (window.innerWidth <= 700 && editionsAccordion.dataset.mobile == 'false') {
+      editionsAccordion.dataset.mobile == 'true';
+      editionsAccordionBtn.classList.add('open');
+      document.querySelectorAll('.check__delete').forEach(el=>{
+        el.style.display = 'none';
+      })
+      editionsAccordionBtn.addEventListener("click", function(){
+        
+        if (editionsAccordionBtn.dataset.open == 'false') {
+          document.querySelectorAll('.check__input').forEach(el=>{
+              el.parentElement.parentElement.style.display = 'flex';
+              el.parentElement.nextElementSibling.style.display = 'none'; 
+          })
+          editionsAccordionBtn.dataset.open = 'true';
+        } 
+        
+       else {
+        editionsAccordionBtn.classList.remove('open');
+          document.querySelectorAll('.check__input').forEach(el=>{
+            if (el.checked) {
+              el.parentElement.nextElementSibling.style.display = 'inline-block';
+              document.querySelectorAll('.check__delete').forEach(btn=>{
+                btn.addEventListener('click', function(ev){
+                  ev.preventDefault();
+                  ev.target.parentElement.style.display = 'none';
+                  ev.target.previousElementSibling.firstElementChild.checked = false;
+                })
+              })
+            }
+            if(!el.checked) {
+              el.parentElement.parentElement.style.display = 'none';
+            }          
+          }) 
+          editionsAccordionBtn.dataset.open = 'false';
+        }
+      })
+      
+    }
+
+    if (window.innerWidth > 701) {
+      editionsAccordion.dataset.mobile = 'false';
+      document.querySelectorAll('.checkbox-item').forEach(el=>{
+        console.log(1);
+        el.style.display = "block";
+      })
+      loadEditions(['all']);
+    }
+  }
+
+  mobileEditionsAccordion();
+
+  window.addEventListener('resize', () => {
+    mobileEditionsAccordion();
+  });
 
   //Маска и валидация для инпутов
 
@@ -548,17 +761,31 @@ catalogBtns.addEventListener('change', (e) => {
       // watchSlidesVisibility: true
     },
     breakpoints:{
-      
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1
+      },
+      550: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 20,
+      },
+      700: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 2,
+        slidesPerGroup: 1,
+        spaceBetween: 50,
+      },
       1540:{
         slidesPerView: 3,
         slidesPerGroup: 1,
         spaceBetween: 50,
-        },
-      1025: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-        spaceBetween: 30,
-      }
+        }
+      
     }
   });
 
@@ -591,20 +818,14 @@ catalogBtns.addEventListener('change', (e) => {
             float: 'none',
             position: {
                 right: 20,
-                top: 260
+                top: 160
            },
               size: 'small'
           }
         })
 
         myMap.controls.add(zoomControl);
-      
-      //   let myGeoObject = new ymaps.GeoObject({
-      //     geometry: {
-      //         type: "Point",
-      //         coordinates: [55.75846806898367,37.60108849999989]
-      //     }
-      // });
+    
   
       let myPlacemark = new ymaps.Placemark([55.75846806898367,37.60108849999989], {}, {
         iconLayout: 'default#image',
@@ -613,6 +834,21 @@ catalogBtns.addEventListener('change', (e) => {
         iconImageOffset: [-3, -7]
     });
       
-      // myMap.geoObjects.add(myGeoObject); 
       myMap.geoObjects.add(myPlacemark); 
       }
+
+      // изменение размеров экрана
+ 
+      if(window.innerWidth<700){
+        document.querySelector('.defis').textContent = document.querySelector('.defis').textContent.replace( '\u{2011}', '-');
+      }
+
+      window.addEventListener('resize', () => {
+        if(window.innerWidth<=700){
+          document.querySelector('.defis').textContent = document.querySelector('.defis').textContent.replace( '\u{2011}', '-');
+        }
+        else{
+          document.querySelector('.defis').textContent = document.querySelector('.defis').textContent.replace( '-', '\u{2011}');
+        }
+      });
+    

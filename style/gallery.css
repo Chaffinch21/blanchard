@@ -176,13 +176,6 @@
   outline: none;
 }
 
-.swiper-container {
-  padding-left: 5px;
-  padding-top: 32px;
-  overflow: hidden;
-  width: 100%;
-}
-
 .gallery-slider__container {
   padding-left: 5px;
   padding-top: 32px;
@@ -195,14 +188,6 @@
   max-width: 350px;
   max-height: 350px;
 }
-
-/* .swiper-slide:not(:nth-child(3n)) {
-  padding-right: 50px;
-}
-
-.swiper-slide:nth-child(2n+1) {
-  padding-bottom: 50px;
-} */
 
 .gallery-slider__nav {
   padding-bottom: 30px;

@@ -8,11 +8,15 @@
   }
 
   .events-article {
-    min-height: 680px;
+    min-height: 685px;
   }
 
   .events-article__content {
-    padding: 17px 17px 30px 30px;
+    padding: 17px 17px 30px 32px;
+  }
+
+  .events-content__title {
+    max-width: 97%;
   }
 
   .events-content__text {
@@ -23,4 +27,112 @@
     bottom: 43px;
     left: 30px;
   }
+}
+
+@media (max-width: 960px) {
+
+  .events-article__content {
+    padding: 13px 17px 30px 30px;
+  }
+
+  .events-item {
+    flex-basis: 47.3%;
+  }
+
+  .events-item:not(:nth-child(3n)) {
+    margin-right: 0;
+  }
+  
+  .events-item:not(:nth-child(2n)) {
+    margin-right: 5.3%;
+  }
+
+  .events-item:nth-child(n+3) {
+    display: none;
+  }
+  
+  .events-list.is-open .events-item:nth-child(n+3){
+    display: block;
+  }
+
+  .events-article {
+    min-height: 680px;
+  }
+
+  .events-article__content {
+    padding: 13px 17px 30px 35px;
+  }
+
+  .events-article__picture {
+    width: 100%;
+  }
+
+  .events-content__title {
+    max-width: 94%;
+  }
+}
+
+@media (max-width: 600px) {
+  .events {
+    margin-bottom: 47px;
+  }
+
+  .events-swiper__container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+   .events-list {
+     max-height: 703px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: flex-start;
+    box-sizing: content-box;
+  }
+
+  .events-item {
+    flex-basis: 100%;
+    cursor: pointer;
+  }
+
+  .events-item:nth-child(n+3) {
+    display: block;
+  }
+
+  .events-item:not(:nth-child(2n)) {
+    margin-right: 0;
+}
+
+.events-article__content {
+  padding: 10px 12px 30px 27px;
+}
+
+.events-content__title {
+  max-width: 100%;
+  margin-bottom: 35px;
+}
+
+.events-btn {
+  display: none;
+}
+
+.swiperEv-pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.swiperEv-pagination .swiper-pagination-bullets {
+  bottom: 25px;
+}
+
+.swiperEv-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: var(--silver-color);
+}
+
+.swiperEv-pagination .swiper-pagination-bullet:not(:last-child) {
+  margin-right: 11px;
+}
 }

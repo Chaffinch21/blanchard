@@ -38,6 +38,7 @@
   <link rel="stylesheet" href="style/footer.css">
   <link rel="stylesheet" href="style/footer-media.css">
   <link rel="stylesheet" href="style/modal.css">
+  <link rel="stylesheet" href="style/modal-media.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js" defer></script>
@@ -88,7 +89,7 @@
         <div class="logo">
           <a href="#" class="logo__link" aria-label="Сайт Blanchard. Художественная галерея">
             <picture class="logo__picture">
-              <source class="logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
+              <source class="logo__img" media="(max-width: 700px)" srcset="img/logoheader320_1x.svg">
               <source class="logo__img" media="(max-width: 1300px)" srcset="img/logoheader1024.svg">
               <source class="logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
               <img class="logo__img" src="img/logoheader.svg" alt="логотип Blanchard">
@@ -97,8 +98,9 @@
         </div>
 
         <form class="media-search">
-          <input type="search" name="media-search" placeholder="Поиск" class="input-reset media-search__field">
           <button type="button" aria-label="найти" class="btn media-search__submit"></button>
+          <input type="search" name="media-search" class="input-reset media-search__field">
+          <button type="button" aria-label="закрыть поиск" class="btn media-search__close"></button>
         </form>
 
         <nav class="header-nav nav">
@@ -367,12 +369,15 @@
     <section class="events" id="events">
       <div class="container events-container">
         <h2 class="title events-title">События</h2>
+        <div class="events-swiper__container" data-mobile="false">
         <ul class="list-reset events-list">
           <li class="events-item">
             <article class="events-article">
               <picture class="events-article__picture">
-                <source srcset="/img/events1.jpg" media="(min-width:1025px)" class="events-article__img">
+                <source srcset="/img/events1-320.jpg" media="(max-width:600px)" class="events-article__img">
+                <source srcset="/img/events1-768.jpg" media="(max-width:960px)" class="events-article__img">
                 <source srcset="/img/events1-1024.jpg" media="(max-width:1024px)" class="events-article__img">
+                <source srcset="/img/events1.jpg" media="(min-width:1025px)" class="events-article__img">
                 <img src="/img/events1.jpg" alt="Книжная гравюра" class="events-article__img">
               </picture>
               
@@ -392,8 +397,10 @@
           <li class="events-item">
             <article class="events-article">
                 <picture class="events-article__picture">
-                  <source srcset="/img/events2.jpg" media="(min-width:1025px)" class="events-article__img">
+                  <source srcset="/img/events2-320.jpg" media="(max-width:600px)" class="events-article__img">
+                  <source srcset="/img/events2-768.jpg" media="(max-width:960px)" class="events-article__img">
                   <source srcset="/img/events2-1024.jpg" media="(max-width:1024px)" class="events-article__img">
+                  <source srcset="/img/events2.jpg" media="(min-width:1025px)" class="events-article__img">
                   <img src="/img/events1.jpg" alt="Открытая дискуссия" class="events-article__img">
                 </picture>
               <div class="events-article__content events-content">
@@ -411,8 +418,10 @@
           <li class="events-item">
             <article class="events-article">
               <picture class="events-article__picture">
-                <source srcset="/img/events3.jpg" media="(min-width:1025px)" class="events-article__img">
+                <source srcset="/img/events3-320.jpg" media="(max-width:600px)" class="events-article__img">
+                <source srcset="/img/events3-768.jpg" media="(max-width:960px)" class="events-article__img">
                 <source srcset="/img/events3-1024.jpg" media="(max-width:1024px)" class="events-article__img">
+                <source srcset="/img/events3.jpg" media="(min-width:1025px)" class="events-article__img">
                 <img src="/img/events1.jpg" alt="Выставка «Формация 2020»" class="events-article__img">
               </picture>
               <div class="events-article__content events-content">
@@ -430,8 +439,10 @@
           <li class="events-item">
             <article class="events-article">
               <picture class="events-article__picture">
-                <source srcset="/img/events4.jpg" media="(min-width:1025px)" class="events-article__img">
+                <source srcset="/img/events4-320.jpg" media="(max-width:600px)" class="events-article__img">
+                <source srcset="/img/events4-768.jpg" media="(max-width:960px)" class="events-article__img">
                 <source srcset="/img/events4-1024.jpg" media="(max-width:1024px)" class="events-article__img">
+                <source srcset="/img/events4.jpg" media="(min-width:1025px)" class="events-article__img">
                 <img src="/img/events1.jpg" alt="Виды выставки" class="events-article__img">
               </picture>
               <div class="events-article__content events-content">
@@ -449,9 +460,11 @@
           <li class="events-item">
             <article class="events-article">
               <picture class="events-article__picture">
-                <source srcset="/img/events5.jpg" media="(min-width:1025px)" class="events-article__img">
-                <source srcset="/img/events5-1024.jpg" media="(max-width:1024px)" class="events-article__img">
-                <img src="/img/events1.jpg" alt="Джон Винзор. Фотография." class="events-article__img">
+                <source srcset="img/events5-320.jpg" media="(max-width:600px)" class="events-article__img">
+                <source srcset="img/events5-768.jpg" media="(max-width:960px)" class="events-article__img">
+                <source srcset="img/events5-1024.jpg" media="(max-width:1024px)" class="events-article__img">
+                <source srcset="img/events5.jpg" media="(min-width:1025px)" class="events-article__img">
+                <img src="img/events1.jpg" alt="Джон Винзор. Фотография." class="events-article__img">
               </picture>
               <div class="events-article__content events-content">
                 <div class="events-content__descr">
@@ -465,16 +478,19 @@
             </article>
           </li>
         </ul>
+        <div class="swiperEv-pagination"></div>
+      </div>
         <button type="button" class="btn events-btn">Все события</button>
       </div>
     </section>
+
 
    <section class="editions" id="editions">
       <div class="container editions-container">
         <div class="editions-filter">
           <h2 class="title editions-title">Издания</h2>
-          <form class="editions-checkbox">
-            <h3 class="editions-subtitle checkbox-title">Категории</h3>
+          <form class="editions-checkbox accordion-editions" data-mobile="false">
+            <button type = "button" class="btn editions-subtitle checkbox-title" data-open = "true">Категории</button>
             <ul class="list-reset editions-checkbox__list checkbox-list">
               <li class="checkbox-item">
                 <label class="check">
@@ -482,6 +498,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Бестселлеры</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -490,6 +507,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Искусство</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
     
               <li class="checkbox-item">
@@ -498,6 +516,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Архитектура</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
     
               <li class="checkbox-item">
@@ -506,6 +525,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Дизайн</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
     
               <li class="checkbox-item">
@@ -514,6 +534,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Мода</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
     
               <li class="checkbox-item">
@@ -522,14 +543,16 @@
                   <span class="check__box"></span>
                   <span class="check__text">Детям</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
-                <label class="check">
+                <label class="check check--twoline">
                   <input type="checkbox" class="check__input" value="literature">
                   <span class="check__box"></span>
                   <span class="check__text">Художественная литература</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -538,6 +561,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Публицистика</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -546,6 +570,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Путеводители</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -554,6 +579,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Философия</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -562,6 +588,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Учебная литература</span>
                 </label>
+                <button class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
 
               <li class="checkbox-item">
@@ -570,6 +597,7 @@
                   <span class="check__box"></span>
                   <span class="check__text">Журналы и газеты</span>
                 </label>
+                <button type="button" class="btn check__delete" aria-label="отменить выбор"></button>
               </li>
             </ul>
             <h3 class="editions-subtitle">Цена</h3>
@@ -581,7 +609,7 @@
           </form>
         </div>
 
-        <div class="editions-slider swiper-slider swiper-editions__container editionsSwiper">
+        <div class="editions-slider swiper-slider swiper-editions__container editionsSwiper" data-big="true">
           <div class="editions-slider__nav">
             <div class="swiperEd-button-prev"></div>
 
@@ -590,7 +618,7 @@
             <div class="swiperEd-button-next"></div>
           </div>
 
-          <div class="swiper-wrapper swiper-editions__wrapper">
+          <div class="swiper-editions__wrapper swiper-wrapper">
             
           </div>
         </div>
@@ -601,7 +629,7 @@
       <div class="container project-container">
         <h2 class="title project-title">Проекты</h2>
         <p class="project-text">
-          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно&#8209;пропагандистское <button id="tooltip--one" class="btn project-tooltip" type="button"></button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button id="tooltip--two" class="btn project-tooltip" type="button"></button> исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых <button id="tooltip--three" class="btn project-tooltip" type="button"></button> предпосылок. Банальные, но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с не уникальными данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" class="project-text__link">blanchard-art.ru/projects/about</a>
+          Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые государства смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное <span class="defis">информационно&#8209;пропагандистское</span> <button id="tooltip--one" class="btn project-tooltip" type="button"></button> обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены <button id="tooltip--two" class="btn project-tooltip" type="button"></button> исключительно в&nbsp;разрезе маркетинговых и финансовых <button id="tooltip--three" class="btn project-tooltip" type="button"></button> предпосылок. Банальные, но неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с не уникальными данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" class="project-text__link">blanchard&#8209;art.ru/projects/about</a>
         </p>
 
         <h3 class="project-subtitle">Партнёры проектов:</h3>
@@ -614,8 +642,10 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
-                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner1.png">
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner1-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner1-768.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner1-1024.png">
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner1.png">
                     <img class="project-partners__img" src="img/partner1.png" alt="Freelands Foundation">
                   </picture>
                 </a>
@@ -623,8 +653,10 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
-                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner2.png">
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner2-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner2-768.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner2-1024.png">
+                    <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner2.png">
                     <img class="project-partners__img" src="img/partner2.png" alt="Institute for ContemporaryArt">
                   </picture>
                   
@@ -633,6 +665,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner3-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner3-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner3.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner3-1024.png">
                     <img class="project-partners__img" src="img/partner3.png" alt="Workhouse">
@@ -642,6 +676,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner4-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner4-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner4.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner4-1024.png">
                     <img class="project-partners__img" src="img/partner4.png" alt="1849">
@@ -651,6 +687,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner5-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner5-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner5.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner5-1024.png">
                     <img class="project-partners__img" src="img/partner5.png" alt="hiscox">
@@ -660,6 +698,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner6-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner6-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner6.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner6-1024.png">
                     <img class="project-partners__img" src="img/partner6.png" alt="stassen">
@@ -669,6 +709,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner7-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner7-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner7.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner7-1024.png">
                     <img class="project-partners__img" src="img/partner7.png" alt="watts gallery artists village">
@@ -678,6 +720,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner8-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner8-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner8.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner8-1024.png">
                     <img class="project-partners__img" src="img/partner8.png" alt="camden">
@@ -687,6 +731,8 @@
               <div class="project-partners">
                 <a href="#" class="project-partners__link">
                   <picture>
+                    <source class="project-partners__img" media="(max-width: 700px)" srcset="img/partner9-320.png">
+                    <source class="project-partners__img" media="(max-width: 960px)" srcset="img/partner9-768.png">
                     <source class="project-partners__img" media="(min-width: 1300px)" srcset="img/partner9.png">
                     <source class="project-partners__img" media="(max-width: 1300px)" srcset="img/partner9-1024.png">
                     <img class="project-partners__img" src="img/partner9.png" alt="esad">
@@ -705,6 +751,8 @@
     <section class="contact" id="contact">
       <div class="container">
         <h2 class="title contact-title">Контакты</h2>
+        <h3 class="contact-subtitle--mobile">Шоурум №4</h3>
+        <p class="contact-adress--mobile">Леонтьевский переулок, дом 5/1</p>
       </div>
       
       <div class="contact-wrap">
@@ -754,7 +802,7 @@
       <div class="logo footer-logo">
         <a href="#" class="logo__link" aria-label="Сайт Blanchard. Художественная галерея">
           <picture class="logo__picture">
-            <source class="logo__img" media="(max-width: 475px)" srcset="img/logoheader320_1x.svg">
+            <source class="logo__img" media="(max-width: 700px)" srcset="img/logoheader320_1x.svg">
             <source class="logo__img" media="(max-width: 1024px)" srcset="img/logoheader1024.svg">
             <source class="logo__img" media="(max-width: 1920px)" srcset="img/logoheader.svg">
             <img class="logo__img" src="img/logoheader.svg" alt="логотип Blanchard">

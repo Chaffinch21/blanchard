@@ -50,6 +50,13 @@
   line-height: 32px;
 }
 
+.contact-subtitle--mobile {
+  display: none;
+}
+.contact-adress--mobile {
+  display: none;
+}
+
 .contact-content__adress {
   margin: 0;
   margin-bottom: 35px;
@@ -206,14 +213,11 @@
 
 .contact-map {
   position: relative;
-  
   flex: 0 0 calc(((100vw - 20px) * 0.675) + 10px);
   /* padding: 0 0 40%; */
   transform: translate(-100%, 0px);
   max-width: 2500px;
 }
-
-
 
 .ymaps-2-1-79-inner-panes {
   position: absolute;

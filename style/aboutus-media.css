@@ -5,7 +5,28 @@
 }
 
 @media (max-width: 1024px) {
+
+  .aboutus__title {
+    margin-bottom: 18px; 
+  }
+
   .aboutus__text {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .aboutus {
+    padding-bottom: 40px;
+    padding-top: 50px;
+  }
+
+  .aboutus__title {
+    margin-bottom: 13px; 
+  }
+
+  .aboutus__text {
+    font-size: 14px;
+    line-height: 28px;
   }
 }

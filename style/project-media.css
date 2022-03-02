@@ -16,7 +16,6 @@
   .project-partners {
     box-sizing: border-box;
     min-width: 384px;
-    
   }
 
   .project-partners__link {
@@ -30,4 +29,77 @@
   .swiperPr-button-next {
     top: 50px;
   }
+}
+
+@media (max-width: 960px) {
+  .project-title {
+    margin-bottom: 17px;
+  }
+
+  .project-text {
+    width: 98%;
+    margin-bottom: 25px;
+  }
+
+  .project-swiper__container {
+    max-width: 562px;
+    max-height: 118px;
+    }
+
+    .project-swiper__wrapper {
+      padding-top: 10px;
+    }
+
+  .project-partners {
+    box-sizing: border-box;
+    min-width: 264px;
+  }
+
+  .project-partners__link {
+    height: 106px;
+  }
+}
+
+@media (max-width: 700px) {
+  .project {
+    margin-bottom: 49px;
+  }
+
+  .project-title {
+    margin-bottom: 10px;
+  }
+
+  .project-text {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .project-subtitle {
+    margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .project-partners {
+    min-width: 195px;
+  }
+
+  .project-partners__link {
+    height: 65px;
+}
+
+.project-swiper__container {
+  max-width: 430px;
+  }
+
+.swiperPr-button-prev,
+.swiperPr-button-next {
+  top: 30px;
+}
+}
+
+@media (max-width: 550px) {
+  .project-swiper__container {
+    max-width: 195px;
+    }
 }

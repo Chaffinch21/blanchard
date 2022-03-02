@@ -88,6 +88,18 @@ svg path {
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    max-width: 689px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 310px;
+  }
+}
+
 .list-reset {
   padding: 0;
   margin: 0;
@@ -110,6 +122,13 @@ svg path {
   font-size: 48px;
   line-height: 65px;
   font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 28px;
+    line-height: 38px;
+  }
 }
 
 svg path {
