@@ -245,7 +245,6 @@ const loadGallery = (art) => {
         galleryBtn.forEach(btn => {
           btn.addEventListener('click', function(e){
             const id = e.currentTarget.dataset.id;
-            console.log(id);
             loadModal(id);
           });
         })
@@ -263,7 +262,7 @@ loadGallery('painting');
 
 
   window.addEventListener('resize', function(){
-    const art = catalogBtns.currentTarget.value;
+    const art = catalogBtns.value;
     loadGallery(art);
   
   });
@@ -340,15 +339,7 @@ catalogBtns.addEventListener('change', (e) => {
               document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
               return;            
           }
-          // if (man.painter == paint){
-          //   catalogPainter.innerHTML = `
-          //     <img class="painter-img" src="${man.img}" alt="${man.painter}">
-          //     <h3 class="painter-name">${man.painter}</h3>
-          //     <span class="painter-year">${man.years}</span>
-          //     <p class="painter-descr">${man.descr}</p>
-          //   `;
-          //   document.querySelector(`.accordion-painteritem__btn[data-painter = "${man.painter}"]`).classList.add('active');
-          // } 
+         
         }
       });
   };
@@ -377,6 +368,9 @@ catalogBtns.addEventListener('change', (e) => {
               elem.classList.remove('active');
             });
             loadPainter(el.textContent);
+            if(window.innerWidth<=700){
+              catalogPainter.scrollIntoView({block:"start", behavior:"smooth"});
+            }
           })
         })
       }
@@ -512,10 +506,10 @@ catalogBtns.addEventListener('change', (e) => {
           disabledClass: 'swiperEd-button-disabled'
         },
         breakpoints:{
-          600:{
+          700:{
             slidesPerView: 2,
             slidesPerGroup: 1,
-            spaceBetween: 38,
+            spaceBetween: 45,
           },
           900:{
             slidesPerView: 2,
@@ -636,13 +630,32 @@ catalogBtns.addEventListener('change', (e) => {
   const mobileEditionsAccordion = () => {
     if (window.innerWidth <= 700 && editionsAccordion.dataset.mobile == 'false') {
       editionsAccordion.dataset.mobile == 'true';
-      editionsAccordionBtn.classList.add('open');
+      // editionsAccordionBtn.classList.add('open');
       document.querySelectorAll('.check__delete').forEach(el=>{
         el.style.display = 'none';
       })
+
+      document.querySelector('input[value="design"]').checked='checked';
+
+      document.querySelectorAll('.check__input').forEach(el=>{
+        if (el.checked) {
+          el.parentElement.nextElementSibling.style.display = 'inline-block';
+          document.querySelectorAll('.check__delete').forEach(btn=>{
+            btn.addEventListener('click', function(ev){
+              ev.preventDefault();
+              ev.target.parentElement.style.display = 'none';
+              ev.target.previousElementSibling.firstElementChild.checked = false;
+            })
+          })
+        }
+        if(!el.checked) {
+          el.parentElement.parentElement.style.display = 'none';
+        }          
+      })
+
       editionsAccordionBtn.addEventListener("click", function(){
-        
         if (editionsAccordionBtn.dataset.open == 'false') {
+          editionsAccordionBtn.classList.add('open');
           document.querySelectorAll('.check__input').forEach(el=>{
               el.parentElement.parentElement.style.display = 'flex';
               el.parentElement.nextElementSibling.style.display = 'none'; 
@@ -676,7 +689,6 @@ catalogBtns.addEventListener('change', (e) => {
     if (window.innerWidth > 701) {
       editionsAccordion.dataset.mobile = 'false';
       document.querySelectorAll('.checkbox-item').forEach(el=>{
-        console.log(1);
         el.style.display = "block";
       })
       loadEditions(['all']);
@@ -719,6 +731,24 @@ catalogBtns.addEventListener('change', (e) => {
     messages: {
       name:'Недопустимый формат',
       tel: 'Укажите ваш телефон'
+    },
+    submitHandler: function(thisForm) {
+      let formData = new FormData(thisForm);
+  
+      let xhr = new XMLHttpRequest();
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            console.log('Отправлено');
+          }
+        }
+      }
+  
+      xhr.open('POST', 'mail.php', true);
+      xhr.send(formData);
+  
+      thisForm.reset();
     }
   })
 
