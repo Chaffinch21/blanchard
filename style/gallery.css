@@ -243,6 +243,7 @@
 .gallery-slide__btn {
   position: relative;
   padding: 0;
+  max-height: calc(100% - 2px);
 }
 
 .gallery-slide__btn:focus {
@@ -288,6 +289,7 @@
   opacity: 1;
 }
 
-.swiper-slide__img {
-  max-width:100%;
+.gallery-slide__img {
+  object-fit: cover;
+  min-height: 100%;
 }

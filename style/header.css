@@ -237,7 +237,7 @@
 .hidemenu-list{
   display: none;
   position: absolute;
-  overflow: auto;
+  /* overflow: auto; */
   top: 49px;
   left: -30px;
   width: 300px;
@@ -248,16 +248,6 @@
   background: rgba(0, 0, 0, 0.4);
   transition: display .3s ease-in-out;
 }
-
-/* .hidemenu-list--one {
-  display: none;
-  left: -30px;
-}
-
-.is-open.hidemenu-list--one {
-  display: block;
-  transition: display .3s ease-in-out;
-} */
 
 .is-open.submenu-item .hidemenu-list  {
   display: block;

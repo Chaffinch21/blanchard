@@ -24,7 +24,7 @@
 
 @media (max-width: 768px){
   .modal-gallery {
-    width: 668px;
+    width: 87.5%;
     height: 594px;
   }
 
@@ -47,5 +47,43 @@
 
   .modal-gallery__btn {
     right: 15px;
+  }
+}
+
+@media (max-width: 650px){
+  .modal-gallery {
+    position: relative;
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .modal-gallery__image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .modal-gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-descr {
+    padding: 17px 10px 30px 20px;
+  }
+
+  .modal-descr__year {
+    margin-bottom: 15px;
+  }
+
+  .modal-gallery__btn {
+    position: absolute;
+    right: 15px;
+  }
+
+  .modal-descr__text {
+    width: 100%;
+    font-size: 14px;
+    height: 200px;
   }
 }
