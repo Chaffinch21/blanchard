@@ -37,14 +37,14 @@ burgerBtn.addEventListener('click', function(ev){
 
 //мобильное меню
   let heightHero = document.querySelector('.hero').offsetHeight;
-  let heightHeader = document.querySelector('.header').offsetHeight;
-  let heightMediaMenu = heightHero + heightHeader
-  mediaMenu.style.height = heightMediaMenu + 'px';
+  // let heightHeader = document.querySelector('.header').offsetHeight;
+  // let heightMediaMenu = heightHero + heightHeader
+  mediaMenu.style.height = heightHero + 'px';
 window.addEventListener("resize", function(){
   heightHero = document.querySelector('.hero').offsetHeight;
-  heightHeader = document.querySelector('.header').offsetHeight;
-  heightMediaMenu = heightHero + heightHeader
-  mediaMenu.style.height = heightMediaMenu + 'px';
+  // heightHeader = document.querySelector('.header').offsetHeight;
+  // heightMediaMenu = heightHero + heightHeader
+  mediaMenu.style.height = heightHero + 'px';
 });
 
 mediaMenuLink.forEach(el=>{
@@ -55,15 +55,18 @@ mediaMenuLink.forEach(el=>{
 
 //поиск
 mediaSerch.addEventListener('click', function(){
- 
+  
     logo.classList.add('hidden');
     burgerBtn.classList.add('hidden');
-    mediaField.classList.add('open');
+    
     mediaSerchClose.style.display = 'block';
-  if (document.documentElement.clientWidth<701){
-    document.querySelector('.header-menu__container').style.height = '75px';
-    document.querySelector('.media-search').style.marginBottom = '-15px';
-  }
+    if (window.innerWidth<1300 && window.innerWidth>700){
+      mediaField.classList.toggle('open');
+    } else {mediaField.classList.add('open');}
+    if (window.innerWidth<701){
+      document.querySelector('.header-menu__container').style.height = '75px';
+      document.querySelector('.media-search').style.marginBottom = '-15px';
+    }
 })
 
 mediaSerchClose.addEventListener('click', function(){
@@ -71,7 +74,7 @@ mediaSerchClose.addEventListener('click', function(){
   setTimeout(function(){burgerBtn.classList.remove('hidden')}, 500);
     mediaField.classList.remove('open');
     mediaSerchClose.style.display = 'none';
-    if (document.documentElement.clientWidth<701){
+    if (window.innerWidth<701){
       document.querySelector('.header-menu__container').style.height = '45px';
       document.querySelector('.media-search').style.marginBottom = '0px';
     }
